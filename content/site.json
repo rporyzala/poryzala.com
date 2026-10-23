@@ -97,7 +97,9 @@
         "status": "ok",
         "title": "Microsoft MD-102 · Endpoint Administrator",
         "meta": "Juli 2026 · 821 / 1000 Punkte",
-        "text": "Intune, Autopilot, Entra ID, Compliance- und App-Protection-Richtlinien."
+        "text": "Intune, Autopilot, Entra ID, Compliance- und App-Protection-Richtlinien.",
+        "link_label": "Zertifikat",
+        "link_url": "https://learn.microsoft.com/api/credentials/share/en-gb/RobertPoryzala-2029/1072B1DCA21C2220?sharingId=ED37A16445076AEC"
       },
       {
         "status": "wip",
@@ -116,7 +118,7 @@
       {
         "status": "plan",
         "title": "Cisco CCNA",
-        "meta": "vor Praktikumsbeginn",
+        "meta": "02/2027",
         "text": "Routing, Switching, VLANs, IP-Services und Netzwerksicherheit."
       }
     ]
