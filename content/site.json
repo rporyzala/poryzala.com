@@ -1,13 +1,11 @@
-
+{
   "meta": {
-<<<<<<< HEAD
     "title": "Robert Poryzała – Fachinformatiker Systemintegration",
     "description": "Robert Poryzała – Umschüler zum Fachinformatiker für Systemintegration in Berlin. Praktikum gesucht: 07.06.2027–04.02.2028."
   },
   "hero": {
     "status": "Praktikum gesucht · 07.06.2027–04.02.2028 · Berlin",
     "name": "Robert Poryzała",
->>>>>>> 4fe8e1e (Praktikumszeitraum bis 04.02.2028)
     "subtitle": "Umschüler zum Fachinformatiker für Systemintegration",
     "lead": "Vom Art Director zum Systemintegrator: **25+ Jahre Kommunikation und Gestaltung**, vier Jahre **IT-Administration in einer Kanzlei und zwei Jahre in zwei Hausarztpraxen** und jetzt die strukturierte Ausbildung mit Microsoft-, Linux- und Netzwerk-Zertifizierungen. Ich baue Systeme, die laufen, und erkläre sie so, dass andere sie verstehen.",
     "button_primary": "Kontakt aufnehmen",
@@ -18,9 +16,7 @@
   "profil": {
     "kicker": "Profil",
     "title": "Quereinsteiger mit Praxis",
-<<<<<<< HEAD
-    "text": "Seit Februar 2026 mache ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06. bis 04.02.2028**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und über zwei Jahre unterstütze Praxen bei ihrer IT.\n\nAus 25+ Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
->>>>>>> 4fe8e1e (Praktikumszeitraum bis 04.02.2028)
+    "text": "Seit Februar 2026 mache ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06.2027 bis 04.02.2028**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und über zwei Jahre unterstütze Praxen bei ihrer IT.\n\nAus 25+ Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
   },
   "praxis": {
     "kicker": "Praxiserfahrung",
@@ -172,6 +168,31 @@
         ]
       },
       {
+        "title": "iMac 27\" als eigenständiger HDMI-Monitor",
+        "text": "Ausgedienten iMac 27\" (2010) zum externen 2560×1440-Monitor umgebaut: Logicboard ausgebaut, das LG-Panel an eine Display-Controller-Platine mit HDMI-Eingang angeschlossen, Stromversorgung neu verdrahtet und die Hintergrundbeleuchtung auf Fehler untersucht. Ein 27-Zoll-Display, das sonst Elektroschrott wäre.",
+        "tags": [
+          "Hardware",
+          "Display-Controller",
+          "Fehlersuche",
+          "Upcycling"
+        ],
+        "link_label": "",
+        "link_url": ""
+      },
+      {
+        "title": "Alte MacBooks fit für Linux",
+        "text": "MacBook Air 2014, MacBook Air 2016 und MacBook Pro i7 2011 auf Linux umgestellt. Beim MacBook Pro die fehlerhafte AMD-Grafik dauerhaft abgeschaltet: NVRAM-Variable gesetzt, GRUB2 so angepasst, dass der dedizierte Grafikchip vor dem Systemstart per I/O-Port-Befehl deaktiviert wird, und den Bootloader in der EFI-Partition eingerichtet. Ergebnis: stabile Rechner mit der integrierten Intel-Grafik.",
+        "tags": [
+          "Linux",
+          "GRUB2",
+          "EFI/NVRAM",
+          "Bootloader",
+          "Hardware"
+        ],
+        "link_label": "",
+        "link_url": ""
+      },
+      {
         "title": "Incident Response bei einer Website-Kompromittierung",
         "text": "Kompromittierte WordPress-Installation forensisch untersucht: Beweise mit Zeitstempeln gesichert, Webshells und Hintertüren identifiziert, Zeitfenster über Backup-Vergleiche eingegrenzt, Zugänge rotiert und den Neuaufbau als statische Seite umgesetzt.",
         "tags": [
@@ -306,11 +327,10 @@
     "kicker": "Werdegang",
     "title": "Stationen",
     "items": [
-<<<<<<< HEAD
       {
         "when": "02/2026 – 02/2028",
         "title": "Umschulung Fachinformatiker für Systemintegration · Damago, Berlin",
-        "text": "Gefördert durch die Bundesagentur für Arbeit. Praktikumsblock: 07.06.–30.07.2027.",
+        "text": "Gefördert durch die Bundesagentur für Arbeit. Praktikumsblock: 07.06.2027–04.02.2028.",
         "current": true
       },
       {
@@ -343,14 +363,6 @@
         "text": "Acht Semester.",
         "current": false
       }
-=======
-      { "when": "02/2026 – 02/2028", "title": "Umschulung Fachinformatiker für Systemintegration · Damago, Berlin", "text": "Gefördert durch die Bundesagentur für Arbeit. Praktikumsblock: 07.06.2027–04.02.2028.", "current": true },
-      { "when": "01/2023 – heute", "title": "IT-Betreuung für Arztpraxen · Berlin", "text": "Zwei Praxen, drei Standorte: macOS/iOS, tomedo, Telematikinfrastruktur, Netzwerk, VPN und Anwendersupport.", "current": false },
-      { "when": "02/2022 – 11/2025", "title": "Senior Grafik-Designer · Zalando Outlets GmbH, Berlin", "text": "Gestaltung für Retail und Markenkommunikation der Outlet-Standorte.", "current": false },
-      { "when": "10/2018 – 11/2022", "title": "IT-Administrator & Webentwickler · Rechtsanwaltskanzlei, Berlin", "text": "Installation, Wartung und Support von Windows- und Linux-Systemen, beA-Schnittstelle, Nextcloud, digitale Akte.", "current": false },
-      { "when": "1998 – 2018", "title": "Grafik-Designer & Art Director · Werbebranche, Warschau und Berlin", "text": "Branding-, Retail- und Raumprojekte mit großen Agenturen.", "current": false },
-      { "when": "1994 – 1998, 2007 – 2009", "title": "Studium Architektur & Städtebau · Technische Universität Warschau", "text": "Acht Semester.", "current": false }
->>>>>>> 4fe8e1e (Praktikumszeitraum bis 04.02.2028)
     ]
   },
   "kontakt": {
