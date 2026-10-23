@@ -193,6 +193,31 @@
         "link_url": ""
       },
       {
+        "title": "iMac 27\" als eigenständiger HDMI-Monitor",
+        "text": "Ausgedienten iMac 27\" (2010) zum externen 2560×1440-Monitor umgebaut: Logicboard ausgebaut, das LG-Panel an eine Display-Controller-Platine mit HDMI-Eingang angeschlossen, Stromversorgung neu verdrahtet und die Hintergrundbeleuchtung auf Fehler untersucht. Ein 27-Zoll-Display, das sonst Elektroschrott wäre.",
+        "tags": [
+          "Hardware",
+          "Display-Controller",
+          "Fehlersuche",
+          "Upcycling"
+        ],
+        "link_label": "",
+        "link_url": ""
+      },
+      {
+        "title": "Alte MacBooks fit für Linux",
+        "text": "MacBook Air 2014, MacBook Air 2016 und MacBook Pro i7 2011 auf Linux umgestellt. Beim MacBook Pro die fehlerhafte AMD-Grafik dauerhaft abgeschaltet: NVRAM-Variable gesetzt, GRUB2 so angepasst, dass der dedizierte Grafikchip vor dem Systemstart per I/O-Port-Befehl deaktiviert wird, und den Bootloader in der EFI-Partition eingerichtet. Ergebnis: stabile Rechner mit der integrierten Intel-Grafik.",
+        "tags": [
+          "Linux",
+          "GRUB2",
+          "EFI/NVRAM",
+          "Bootloader",
+          "Hardware"
+        ],
+        "link_label": "",
+        "link_url": ""
+      },
+      {
         "title": "Incident Response bei einer Website-Kompromittierung",
         "text": "Kompromittierte WordPress-Installation forensisch untersucht: Beweise mit Zeitstempeln gesichert, Webshells und Hintertüren identifiziert, Zeitfenster über Backup-Vergleiche eingegrenzt, Zugänge rotiert und den Neuaufbau als statische Seite umgesetzt.",
         "tags": [
