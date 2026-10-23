@@ -162,3 +162,34 @@ content:
         type: object
         fields:
           - { name: text, label: Text, type: text }
+
+  - name: design
+    label: Design-Portfolio
+    type: file
+    path: content/design.json
+    format: json
+    fields:
+      - { name: kicker, label: Kleines Label, type: string }
+      - { name: title, label: Überschrift, type: string }
+      - { name: intro, label: Einleitung, type: text }
+      - name: projects
+        label: Arbeiten
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Titel, type: string }
+          - { name: year, label: Jahr, type: string }
+          - { name: visible, label: Anzeigen, type: boolean }
+          - { name: categories, label: Kategorien, type: string, list: true }
+          - { name: text, label: Beschreibung, type: text }
+          - { name: slug, label: "Kurzname für die Adresse (nicht ändern)", type: string }
+          - name: images
+            label: Bilder (erstes Bild = Vorschau)
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Großes Bild, type: image }
+              - { name: thumb, label: Vorschaubild, type: image }
+              - { name: alt, label: Bildbeschreibung, type: string }
+              - { name: w, label: Breite (px), type: number }
+              - { name: h, label: Höhe (px), type: number }

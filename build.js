@@ -73,6 +73,7 @@ const html = `<!doctype html>
       <a class="logo" href="#top">robert<span>@</span>poryzala<span>:~$</span></a>
       <ul>
 ${sections.map(([id, label]) => `        <li><a href="#${id}">${label}</a></li>`).join("\n")}
+        <li><a href="/design/">Design</a></li>
       </ul>
     </nav>
   </div>
@@ -219,8 +220,112 @@ ${c.kontakt.items
 </html>
 `;
 
+
+// ---------- Design-Unterseite ----------
+const designFile = path.join(ROOT, "content/design.json");
+let designHtml = null;
+if (fs.existsSync(designFile)) {
+  const g = JSON.parse(fs.readFileSync(designFile, "utf8"));
+  const slugify = (x) => String(x).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const projects = (g.projects || []).filter((p) => p.visible !== false && (p.images || []).length);
+  const cats = [...new Set(projects.flatMap((p) => p.categories || []))].sort();
+  const filterCss = cats
+    .map((c) => `#f-${slugify(c)}:checked ~ .dgrid .dcard:not([data-c~="${slugify(c)}"]){display:none}`)
+    .join("\n") + "\n" +
+    ["alle", ...cats.map(slugify)]
+      .map((k) => `#f-${k}:checked ~ .filters label[for="f-${k}"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}`)
+      .join("\n");
+  const img = (i, cls = "") =>
+    `<img${cls ? ` class="${cls}"` : ""} src="${safeUrl(i.thumb || i.src)}" alt="${esc(i.alt || "")}" loading="lazy" decoding="async"${i.w ? ` width="${Math.min(i.w, 720)}" height="${Math.round((i.h * Math.min(i.w, 720)) / i.w)}"` : ""}>`;
+  designHtml = `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(g.title)} – Robert Poryzała</title>
+<meta name="description" content="${esc(g.intro)}">
+<link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<style>
+${filterCss}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="/">robert<span>@</span>poryzala<span>:~$</span></a>
+      <ul>
+        <li><a href="/#projekte">IT-Projekte</a></li>
+        <li><a href="/#werdegang">Werdegang</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/design/" aria-current="page">Design</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap dhero">
+    <div class="kicker">${esc(g.kicker)}</div>
+    <h1 class="dtitle">${esc(g.title)}<span class="dot">.</span></h1>
+    ${g.intro ? `<p class="lead">${inline(g.intro)}</p>` : ""}
+  </div>
+
+  <div class="wrap" id="werke">
+    <input type="radio" name="f" id="f-alle" class="fr" checked>
+${cats.map((c) => `    <input type="radio" name="f" id="f-${slugify(c)}" class="fr">`).join("\n")}
+    <div class="filters">
+      <label for="f-alle">Alle</label>
+${cats.map((c) => `      <label for="f-${slugify(c)}">${esc(c)}</label>`).join("\n")}
+    </div>
+    <div class="dgrid">
+${projects
+  .map(
+    (p) => `      <a class="dcard" href="#p-${esc(p.slug)}" data-c="${(p.categories || []).map(slugify).join(" ")}">
+        ${img(p.images[0])}
+        <span class="dmeta"><strong>${esc(p.title)}</strong><span>${esc(p.year || "")}${(p.categories || []).length ? " · " + esc(p.categories.slice(0, 2).join(", ")) : ""}</span></span>
+      </a>`
+  )
+  .join("\n")}
+    </div>
+  </div>
+</main>
+
+${projects
+  .map(
+    (p) => `<div class="legal dproj" id="p-${esc(p.slug)}"><div class="box">
+  <a class="close" href="#werke">✕ schließen</a>
+  <span class="when">${esc(p.year || "")}</span>
+  <h2>${esc(p.title)}</h2>
+  ${tags(p.categories)}
+  <div class="dtext">${md(p.text || "")}</div>
+  <div class="dgallery">
+${p.images.map((i) => `    <a href="${safeUrl(i.src)}" target="_blank" rel="noopener">${img(i)}</a>`).join("\n")}
+  </div>
+</div></div>`
+  )
+  .join("\n")}
+
+<footer>
+  <div class="wrap">
+    <span>${esc(c.footer.text)}</span>
+    <span><a href="/#impressum">Impressum</a> · <a href="/#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+`;
+}
+
 // ---------- Ausgabe ----------
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, "static"), OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, "index.html"), html);
+if (designHtml) {
+  fs.mkdirSync(path.join(OUT, "design"), { recursive: true });
+  fs.writeFileSync(path.join(OUT, "design", "index.html"), designHtml);
+}
 console.log("✓ dist/ gebaut:", fs.readdirSync(OUT).join(", "));
