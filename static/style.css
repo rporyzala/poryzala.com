@@ -134,3 +134,5 @@ nav a[aria-current="page"]{color:var(--ink);font-weight:600}
 .dtext p{color:var(--muted);font-size:15.5px;max-width:720px}
 .dgallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
 .dgallery img{width:100%;height:auto;border-radius:10px;display:block;border:1px solid var(--line)}
+.hero h1{font-weight:300;letter-spacing:-.03em}
+.hero h1 small{font-weight:400}
