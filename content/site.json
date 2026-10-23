@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Robert Poryzała – Fachinformatiker Systemintegration",
-    "description": "Robert Poryzała – Umschüler zum Fachinformatiker für Systemintegration in Berlin. Praktikum gesucht: 07.06.–30.07.2027."
+    "title": "Robert Poryzala – Fachinformatiker Systemintegration",
+    "description": "Robert Poryzala – Umschüler zum Fachinformatiker für Systemintegration in Berlin. Praktikum gesucht: 07.06.–30.07.2027."
   },
   "hero": {
-    "status": "Praktikum gesucht · 07.06.–30.07.2027 · Berlin",
-    "name": "Robert Poryzała",
+    "status": "Praktikum gesucht · 07.06.–04.02.2028 · Berlin",
+    "name": "Robert Poryzala",
     "subtitle": "Umschüler zum Fachinformatiker für Systemintegration",
     "lead": "Vom Art Director zum Systemintegrator: **20 Jahre Kommunikation und Gestaltung**, vier Jahre **IT-Administration in einer Kanzlei** und jetzt die strukturierte Ausbildung mit Microsoft-, Linux- und Netzwerk-Zertifizierungen. Ich baue Systeme, die laufen, und erkläre sie so, dass andere sie verstehen.",
     "button_primary": "Kontakt aufnehmen",
@@ -16,14 +16,14 @@
   "profil": {
     "kicker": "Profil",
     "title": "Quereinsteiger mit Praxis",
-    "text": "Seit Februar 2026 mache ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06. bis 30.07.2027**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und unterstütze Praxen bei ihrer IT.\n\nAus 20 Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
+    "text": "Seit Februar 2026 mache ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06. bis 04.02.2028**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und unterstütze Praxen bei ihrer IT.\n\nAus 20 Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
   },
   "praxis": {
     "kicker": "Praxiserfahrung",
     "title": "IT im echten Betrieb",
     "items": [
       {
-        "when": "01/2023 – heute",
+        "when": "01/2023 – 11/2025",
         "title": "IT-Betreuung für Berliner Arztpraxen",
         "text": "Zwei Praxen an drei Standorten mit getrennten Netzen. Betrieb der Praxissoftware tomedo (Server und Clients auf macOS), Anbindung an die Telematikinfrastruktur, NAS-Speicher, VPN zwischen den Standorten und für Fernwartung.",
         "bullets": [
@@ -33,7 +33,14 @@
           "Support vor Ort und remote für Ärztinnen, Ärzte und MFA; strukturierte Verkabelung",
           "Vollständige IT-Übergabedokumentation mit Netzwerktopologie für einen externen Dienstleister"
         ],
-        "tags": ["macOS", "tomedo", "TI-Konnektor", "VPN", "UniFi", "Synology"]
+        "tags": [
+          "macOS",
+          "tomedo",
+          "Securepoint",
+          "VPN",
+          "TI-Konnektor",
+          "UniFi"
+        ]
       },
       {
         "when": "10/2018 – 11/2022",
@@ -45,14 +52,23 @@
           "Nextcloud als Plattform für die digitale Akte",
           "Website-Entwicklung und -Pflege"
         ],
-        "tags": ["Windows", "Linux", "beA", "Nextcloud"]
+        "tags": [
+          "Windows",
+          "Linux",
+          "beA",
+          "Nextcloud"
+        ]
       },
       {
         "when": "2018 – heute",
         "title": "Websites für Praxen, Kanzleien und Selbstständige",
         "text": "Über 15 Websites aufgebaut und betreut, mit Fokus auf DSGVO-konforme Umsetzung, Wartung und Geschwindigkeit – z. B. PageSpeed-Score einer Kanzlei-Website von 64 auf 92 verbessert.",
-        "bullets": [],
-        "tags": ["WordPress", "Caching", "DSGVO", "Hosting"]
+        "tags": [
+          "WordPress",
+          "Caching",
+          "DSGVO",
+          "Hosting"
+        ]
       },
       {
         "when": "02/2026 – heute",
@@ -64,7 +80,12 @@
           "FortiGate SSL-Deep-Inspection: CA-Zertifikat auf Linux-Clients verteilt",
           "Datenbanken mit MySQL/MariaDB, Java-Grundlagen, REST-API-Design"
         ],
-        "tags": ["Hyper-V", "RDS", "FortiGate", "SQL"]
+        "tags": [
+          "Hyper-V",
+          "RDS",
+          "FortiGate",
+          "SQL"
+        ]
       }
     ]
   },
@@ -72,60 +93,271 @@
     "kicker": "Zertifizierungen",
     "title": "Nachweisbar, nicht nur behauptet",
     "items": [
-      { "status": "ok", "title": "Microsoft MD-102 · Endpoint Administrator", "meta": "Juli 2026 · 821 / 1000 Punkte", "text": "Intune, Autopilot, Entra ID, Compliance- und App-Protection-Richtlinien.", "link_label": "", "link_url": "" },
-      { "status": "wip", "title": "LPIC-1 · Linux Administrator", "meta": "Prüfung 101: Oktober 2026 · 102: Nov. 2026", "text": "Systemarchitektur, Paketverwaltung, Shell, Dateisysteme, Netzwerk, Sicherheit.", "link_label": "Mein Prüfungstrainer →", "link_url": "/lpic/" },
-      { "status": "plan", "title": "Microsoft AZ-104 · Azure Administrator", "meta": "2027", "text": "Identitäten, Speicher, Compute und Netzwerke in Azure.", "link_label": "", "link_url": "" },
-      { "status": "plan", "title": "Cisco CCNA", "meta": "vor Praktikumsbeginn", "text": "Routing, Switching, VLANs, IP-Services und Netzwerksicherheit.", "link_label": "", "link_url": "" }
+      {
+        "status": "ok",
+        "title": "Microsoft MD-102 · Endpoint Administrator",
+        "meta": "Juli 2026 · 821 / 1000 Punkte",
+        "text": "Intune, Autopilot, Entra ID, Compliance- und App-Protection-Richtlinien."
+      },
+      {
+        "status": "wip",
+        "title": "LPIC-1 · Linux Administrator",
+        "meta": "Prüfung 101: Oktober 2026 · 102: Nov. 2026",
+        "text": "Systemarchitektur, Paketverwaltung, Shell, Dateisysteme, Netzwerk, Sicherheit.",
+        "link_label": "Mein Prüfungstrainer →",
+        "link_url": "/lpic/"
+      },
+      {
+        "status": "plan",
+        "title": "Microsoft AZ-104 · Azure Administrator",
+        "meta": "2027",
+        "text": "Identitäten, Speicher, Compute und Netzwerke in Azure."
+      },
+      {
+        "status": "plan",
+        "title": "Cisco CCNA",
+        "meta": "vor Praktikumsbeginn",
+        "text": "Routing, Switching, VLANs, IP-Services und Netzwerksicherheit."
+      }
     ]
   },
   "projekte": {
     "kicker": "Projekte",
     "title": "Was ich gebaut habe",
     "items": [
-      { "title": "Self-Hosting auf dem Raspberry Pi 5", "text": "Nextcloud für Dateien, Kalender und Kontakte als Docker-Compose-Stack mit MariaDB und Nginx-Reverse-Proxy. Erreichbar über Cloudflare Tunnel statt offener Ports, netzwerkweiter DNS-Filter mit AdGuard Home. Migration von Shared Hosting inklusive Fehlersuche bei Berechtigungen, Mounts und Zeichenkodierung.", "tags": ["Docker", "Nextcloud", "Nginx", "MariaDB", "Cloudflare Tunnel", "AdGuard"], "link_label": "", "link_url": "" },
-      { "title": "Hybride Identität: AD + Entra ID + Intune", "text": "Lab mit Domain Controller auf Windows Server 2025, Entra Connect (Password Hash Sync), hybrid eingebundenen Clients, OU-Struktur, GPOs, App-Protection-Richtlinien für iOS und Autopilot-Bereitstellung auf echter Hardware.", "tags": ["Active Directory", "Entra ID", "Intune", "Autopilot", "GPO"], "link_label": "", "link_url": "" },
-      { "title": "AD-Benutzerprovisionierung mit PowerShell", "text": "Skript, das neue Mitarbeitende aus einer CSV-Liste mit Konto, Gruppen und OU anlegt – reproduzierbar statt Klickarbeit. Teil meines Bewerbungsportfolios auf GitHub.", "tags": ["PowerShell", "Active Directory", "Automatisierung"], "link_label": "", "link_url": "" },
-      { "title": "Gehärteter Cloud-Server", "text": "Hetzner-VPS nach Best Practice abgesichert: eigener sudo-User, SSH nur mit Schlüssel, ufw-Firewall, Fail2ban, automatische Sicherheitsupdates, Verwaltung über Cockpit.", "tags": ["Linux", "SSH", "ufw", "Fail2ban"], "link_label": "", "link_url": "" },
-      { "title": "Incident Response bei einer Website-Kompromittierung", "text": "Kompromittierte WordPress-Installation forensisch untersucht: Beweise mit Zeitstempeln gesichert, Webshells und Hintertüren identifiziert, Zeitfenster über Backup-Vergleiche eingegrenzt, Zugänge rotiert und den Neuaufbau als statische Seite umgesetzt.", "tags": ["Forensik", "Log-Analyse", "Bash", "SQL"], "link_label": "", "link_url": "" },
-      { "title": "Diese Website: Git-basiert statt WordPress", "text": "Statische Seite aus einer JSON-Datei, gebaut mit einem kleinen Node-Skript und automatisch über Cloudflare Pages veröffentlicht. Bearbeitung über ein Git-basiertes CMS mit GitHub-Login und 2FA, strenge Security-Header, keine Cookies, kein Tracking.", "tags": ["Git", "Cloudflare Pages", "Node.js", "CSP"], "link_label": "", "link_url": "" },
-      { "title": "Anwesenheits-Tracker für die Umschulung", "text": "Kleine Desktop-App in Python mit grafischer Oberfläche, zeitgesteuerten Erinnerungen über launchd, CSV-Protokoll und Kalender-Integration.", "tags": ["Python", "customtkinter", "launchd", "macOS"], "link_label": "", "link_url": "" },
-      { "title": "DNS-Blocklisten auf der Fritzbox", "text": "Spamhaus-Blocklisten in die Fritzbox übernommen, obwohl sie nur 64 Einträge erlaubt: Netzbereiche zusammengefasst und in /20-Blöcke aufgeteilt, damit die Liste ins Limit passt.", "tags": ["Netzwerk", "Subnetting", "Firewall"], "link_label": "", "link_url": "" },
-      { "title": "LPIC-1 Prüfungstrainer", "text": "Selbst gebaute Lern-App mit 84 Prüfungsfragen zu den Prüfungen 101-500 und 102-500: Kapitel wählen, Fragen beantworten, Auswertung am Ende, Fragenkatalog als JSON exportierbar. Reines HTML und JavaScript, läuft ohne Server.", "tags": ["JavaScript", "HTML/CSS", "JSON", "LPIC-1"], "link_label": "Trainer öffnen →", "link_url": "/lpic/" },
-      { "title": "Linux-Lab für LPIC-1", "text": "Mehrere virtuelle Maschinen (Ubuntu, Fedora, Debian) unter UTM auf Apple Silicon und ältere Hardware mit Ubuntu als Übungsumgebung – jede Prüfungsaufgabe einmal selbst getippt.", "tags": ["UTM", "Ubuntu", "Fedora", "Debian"], "link_label": "", "link_url": "" },
-      { "title": "Lern-Logbuch auf GitHub", "text": "Öffentliches Logbuch meiner Umschulung: Befehle, Fehler, Lösungen und Lab-Aufbauten, nachvollziehbar dokumentiert.", "tags": ["Git", "Markdown", "Dokumentation"], "link_label": "", "link_url": "" }
+      {
+        "title": "Self-Hosting auf dem Raspberry Pi 5",
+        "text": "Nextcloud für Dateien, Kalender und Kontakte als Docker-Compose-Stack mit MariaDB und Nginx-Reverse-Proxy. Erreichbar über Cloudflare Tunnel statt offener Ports, netzwerkweiter DNS-Filter mit AdGuard Home. Migration von Shared Hosting inklusive Fehlersuche bei Berechtigungen, Mounts und Zeichenkodierung.",
+        "tags": [
+          "Docker",
+          "Nextcloud",
+          "Nginx",
+          "MariaDB",
+          "Cloudflare Tunnel",
+          "AdGuard"
+        ]
+      },
+      {
+        "title": "Hybride Identität: AD + Entra ID + Intune",
+        "text": "Lab mit Domain Controller auf Windows Server 2025, Entra Connect (Password Hash Sync), hybrid eingebundenen Clients, OU-Struktur, GPOs, App-Protection-Richtlinien für iOS und Autopilot-Bereitstellung auf echter Hardware.",
+        "tags": [
+          "Active Directory",
+          "Entra ID",
+          "Intune",
+          "Autopilot",
+          "GPO"
+        ]
+      },
+      {
+        "title": "AD-Benutzerprovisionierung mit PowerShell",
+        "text": "Skript, das neue Mitarbeitende aus einer CSV-Liste mit Konto, Gruppen und OU anlegt – reproduzierbar statt Klickarbeit. Teil meines Bewerbungsportfolios auf GitHub.",
+        "tags": [
+          "PowerShell",
+          "Active Directory",
+          "Automatisierung"
+        ]
+      },
+      {
+        "title": "Gehärteter Cloud-Server",
+        "text": "Hetzner-VPS nach Best Practice abgesichert: eigener sudo-User, SSH nur mit Schlüssel, ufw-Firewall, Fail2ban, automatische Sicherheitsupdates, Verwaltung über Cockpit.",
+        "tags": [
+          "Linux",
+          "SSH",
+          "ufw",
+          "Fail2ban"
+        ]
+      },
+      {
+        "title": "Incident Response bei einer Website-Kompromittierung",
+        "text": "Kompromittierte WordPress-Installation forensisch untersucht: Beweise mit Zeitstempeln gesichert, Webshells und Hintertüren identifiziert, Zeitfenster über Backup-Vergleiche eingegrenzt, Zugänge rotiert und den Neuaufbau als statische Seite umgesetzt.",
+        "tags": [
+          "Forensik",
+          "Log-Analyse",
+          "Bash",
+          "SQL"
+        ]
+      },
+      {
+        "title": "Diese Website: Git-basiert statt WordPress",
+        "text": "Statische Seite aus einer JSON-Datei, gebaut mit einem kleinen Node-Skript und automatisch über Cloudflare Pages veröffentlicht. Bearbeitung über ein Git-basiertes CMS mit GitHub-Login und 2FA, strenge Security-Header, keine Cookies, kein Tracking.",
+        "tags": [
+          "Git",
+          "Cloudflare Pages",
+          "Node.js",
+          "CSP"
+        ]
+      },
+      {
+        "title": "Anwesenheits-Tracker für die Umschulung",
+        "text": "Kleine Desktop-App in Python mit grafischer Oberfläche, zeitgesteuerten Erinnerungen über launchd, CSV-Protokoll und Kalender-Integration.",
+        "tags": [
+          "Python",
+          "customtkinter",
+          "launchd",
+          "macOS"
+        ]
+      },
+      {
+        "title": "DNS-Blocklisten auf der Fritzbox",
+        "text": "Spamhaus-Blocklisten in die Fritzbox übernommen, obwohl sie nur 64 Einträge erlaubt: Netzbereiche zusammengefasst und in /20-Blöcke aufgeteilt, damit die Liste ins Limit passt.",
+        "tags": [
+          "Netzwerk",
+          "Subnetting",
+          "Firewall"
+        ]
+      },
+      {
+        "title": "LPIC-1 Prüfungstrainer",
+        "text": "Selbst gebaute Lern-App mit 84 Prüfungsfragen zu den Prüfungen 101-500 und 102-500: Kapitel wählen, Fragen beantworten, Auswertung am Ende, Fragenkatalog als JSON exportierbar. Reines HTML und JavaScript, läuft ohne Server.",
+        "tags": [
+          "JavaScript",
+          "HTML/CSS",
+          "JSON",
+          "LPIC-1"
+        ],
+        "link_label": "Trainer öffnen →",
+        "link_url": "/lpic/"
+      },
+      {
+        "title": "Linux-Lab für LPIC-1",
+        "text": "Mehrere virtuelle Maschinen (Ubuntu, Fedora, Debian) unter UTM auf Apple Silicon und ältere Hardware mit Ubuntu als Übungsumgebung – jede Prüfungsaufgabe einmal selbst getippt.",
+        "tags": [
+          "UTM",
+          "Ubuntu",
+          "Fedora",
+          "Debian"
+        ]
+      },
+      {
+        "title": "Lern-Logbuch auf GitHub",
+        "text": "Öffentliches Logbuch meiner Umschulung: Befehle, Fehler, Lösungen und Lab-Aufbauten, nachvollziehbar dokumentiert.",
+        "tags": [
+          "Git",
+          "Markdown",
+          "Dokumentation"
+        ]
+      }
     ]
   },
   "skills": {
     "kicker": "Skills",
     "title": "Werkzeugkasten",
     "groups": [
-      { "title": "Windows & Microsoft", "items": ["Windows Server, Active Directory, GPO", "Entra ID, Intune, Autopilot", "Hyper-V, Remote Desktop Services", "Windows Admin Center"] },
-      { "title": "Linux & Server", "items": ["Debian, Ubuntu, Fedora, Raspberry Pi OS", "Docker / Docker Compose", "Nginx, Apache, PHP-FPM", "SSH, ufw, Fail2ban"] },
-      { "title": "Netzwerk", "items": ["TCP/IP, DNS, DHCP", "Cloudflare, Reverse Proxy, TLS", "FortiGate (SSL-Inspection)", "Fritzbox, DNS-Filterung"] },
-      { "title": "Skripte & Daten", "items": ["PowerShell, Bash", "Python, Java (Grundlagen)", "SQL: MySQL / MariaDB", "Git & GitHub"] },
-      { "title": "Web", "items": ["HTML, CSS, JavaScript", "DSGVO-konforme Websites", "Performance-Optimierung", "15+ Projekte seit 2018"] },
-      { "title": "Sprachen", "items": ["Polnisch – Muttersprache", "Deutsch – fließend", "Englisch – gut (Prüfungen auf Englisch)"] }
+      {
+        "title": "Windows & Microsoft",
+        "items": [
+          "Windows Server, Active Directory, GPO",
+          "Entra ID, Intune, Autopilot",
+          "Hyper-V, Remote Desktop Services",
+          "Windows Admin Center"
+        ]
+      },
+      {
+        "title": "Linux & Server",
+        "items": [
+          "Debian, Ubuntu, Fedora, Raspberry Pi OS",
+          "Docker / Docker Compose",
+          "Nginx, Apache, PHP-FPM",
+          "SSH, ufw, Fail2ban"
+        ]
+      },
+      {
+        "title": "Netzwerk",
+        "items": [
+          "TCP/IP, DNS, DHCP",
+          "Cloudflare, Reverse Proxy, TLS",
+          "FortiGate (SSL-Inspection)",
+          "Fritzbox, DNS-Filterung"
+        ]
+      },
+      {
+        "title": "Skripte & Daten",
+        "items": [
+          "PowerShell, Bash",
+          "Python, Java (Grundlagen)",
+          "SQL: MySQL / MariaDB",
+          "Git & GitHub"
+        ]
+      },
+      {
+        "title": "Web",
+        "items": [
+          "HTML, CSS, JavaScript",
+          "DSGVO-konforme Websites",
+          "Performance-Optimierung",
+          "15+ Projekte seit 2018"
+        ]
+      },
+      {
+        "title": "Sprachen",
+        "items": [
+          "Polnisch – Muttersprache",
+          "Deutsch – fließend",
+          "Englisch – gut (Prüfungen auf Englisch)"
+        ]
+      }
     ]
   },
   "werdegang": {
     "kicker": "Werdegang",
     "title": "Stationen",
     "items": [
-      { "when": "02/2026 – 02/2028", "title": "Umschulung Fachinformatiker für Systemintegration · Damago, Berlin", "text": "Gefördert durch die Bundesagentur für Arbeit. Praktikumsblock: 07.06.–30.07.2027.", "current": true },
-      { "when": "01/2023 – heute", "title": "IT-Betreuung für Arztpraxen · Berlin", "text": "Zwei Praxen, drei Standorte: macOS/iOS, tomedo, Telematikinfrastruktur, Netzwerk, VPN und Anwendersupport.", "current": false },
-      { "when": "02/2022 – 11/2025", "title": "Senior Grafik-Designer · Zalando Outlets GmbH, Berlin", "text": "Gestaltung für Retail und Markenkommunikation der Outlet-Standorte.", "current": false },
-      { "when": "10/2018 – 11/2022", "title": "IT-Administrator & Webentwickler · Rechtsanwaltskanzlei, Berlin", "text": "Installation, Wartung und Support von Windows- und Linux-Systemen, beA-Schnittstelle, Nextcloud, digitale Akte.", "current": false },
-      { "when": "1998 – 2018", "title": "Grafik-Designer & Art Director · Werbebranche, Warschau und Berlin", "text": "Branding-, Retail- und Raumprojekte mit großen Agenturen.", "current": false },
-      { "when": "1994 – 1998, 2007 – 2009", "title": "Studium Architektur & Städtebau · Technische Universität Warschau", "text": "Acht Semester.", "current": false }
+      {
+        "when": "02/2026 – 02/2028",
+        "title": "Umschulung Fachinformatiker für Systemintegration · Damago, Berlin",
+        "text": "Gefördert durch die Bundesagentur für Arbeit. Praktikumsblock: 07.06.–30.07.2027.",
+        "current": true
+      },
+      {
+        "when": "01/2023 – heute",
+        "title": "IT-Betreuung für Arztpraxen · Berlin",
+        "text": "Zwei Praxen, drei Standorte: macOS/iOS, tomedo, Telematikinfrastruktur, Netzwerk, VPN und Anwendersupport.",
+        "current": false
+      },
+      {
+        "when": "02/2022 – 11/2025",
+        "title": "Senior Grafik-Designer · Zalando Outlets GmbH, Berlin",
+        "text": "Gestaltung für Retail und Markenkommunikation der Outlet-Standorte.",
+        "current": false
+      },
+      {
+        "when": "10/2018 – 11/2022",
+        "title": "IT-Administrator & Webentwickler · Rechtsanwaltskanzlei, Berlin",
+        "text": "Installation, Wartung und Support von Windows- und Linux-Systemen, beA-Schnittstelle, Nextcloud, digitale Akte.",
+        "current": false
+      },
+      {
+        "when": "1998 – 2018",
+        "title": "Grafik-Designer & Art Director · Werbebranche, Warschau und Berlin",
+        "text": "Branding-, Retail- und Raumprojekte mit großen Agenturen.",
+        "current": false
+      },
+      {
+        "when": "1994 – 1998, 2007 – 2009",
+        "title": "Studium Architektur & Städtebau · Technische Universität Warschau",
+        "text": "Acht Semester.",
+        "current": false
+      }
     ]
   },
   "kontakt": {
     "kicker": "Kontakt",
     "title": "Lassen Sie uns sprechen",
     "items": [
-      { "label": "E-Mail", "value": "robert@poryzala.com", "url": "mailto:robert@poryzala.com" },
-      { "label": "GitHub", "value": "github.com/B0B-X", "url": "https://github.com/B0B-X" },
-      { "label": "Standort", "value": "Berlin · Prenzlauer Berg", "url": "" }
+      {
+        "label": "E-Mail",
+        "value": "robert@poryzala.com",
+        "url": "mailto:robert@poryzala.com"
+      },
+      {
+        "label": "GitHub",
+        "value": "github.com/B0B-X",
+        "url": "https://github.com/B0B-X"
+      },
+      {
+        "label": "Standort",
+        "value": "Berlin · Prenzlauer Berg"
+      }
     ]
   },
   "footer": {
