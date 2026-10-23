@@ -23,7 +23,7 @@
     "title": "IT im echten Betrieb",
     "items": [
       {
-        "when": "01/2023 – 11/2025",
+        "when": "01/2023 – 11/2025, seitdem auf Anfrage",
         "title": "IT-Betreuung für Berliner Arztpraxen",
         "text": "Zwei Praxen an drei Standorten mit getrennten Netzen. Betrieb der Praxissoftware tomedo (Server und Clients auf macOS), Anbindung an die Telematikinfrastruktur, NAS-Speicher, VPN zwischen den Standorten und für Fernwartung.",
         "bullets": [
@@ -330,7 +330,7 @@
         "current": true
       },
       {
-        "when": "01/2023 – 11/2025",
+        "when": "01/2023 – 11/2025, seitdem auf Anfrage",
         "title": "IT-Betreuung für Arztpraxen · Berlin",
         "text": "Zwei Praxen, drei Standorte: macOS/iOS, tomedo, Telematikinfrastruktur, Netzwerk, VPN und Anwendersupport.",
         "current": false
