@@ -378,6 +378,16 @@
       {
         "label": "Standort",
         "value": "Berlin · Prenzlauer Berg"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "LinkedIn",
+        "url": "https://www.linkedin.com/in/robert-poryzala/"
+      },
+      {
+        "label": "Xing",
+        "value": "Xing",
+        "url": "https://www.xing.com/profile/Robert_Poryzala/"
       }
     ]
   },
