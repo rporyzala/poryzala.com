@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPIC-1 Prüfungstrainer</title>
+<style>
+:root {
+  --paper: #f1ece0;
+  --paper-raised: #f8f4ea;
+  --ink: #23262b;
+  --ink-soft: #5c6470;
+  --ink-faint: #8b8f7d;
+  --rule: #c9c0a8;
+  --accent: #2f6f4f;
+  --accent-ink: #f1ece0;
+  --wrong: #a13d2c;
+  --wrong-bg: #f3e2dd;
+  --right: #2f6f4f;
+  --right-bg: #e3ece3;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, Menlo, monospace;
+  --sans: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --paper: #1c1b17;
+    --paper-raised: #262420;
+    --ink: #ece7d9;
+    --ink-soft: #b7b0a0;
+    --ink-faint: #7c7768;
+    --rule: #47443a;
+    --accent: #6fbf8f;
+    --accent-ink: #16211a;
+    --wrong: #e08871;
+    --wrong-bg: #3a221c;
+    --right: #6fbf8f;
+    --right-bg: #1e2e22;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1b17;
+  --paper-raised: #262420;
+  --ink: #ece7d9;
+  --ink-soft: #b7b0a0;
+  --ink-faint: #7c7768;
+  --rule: #47443a;
+  --accent: #6fbf8f;
+  --accent-ink: #16211a;
+  --wrong: #e08871;
+  --wrong-bg: #3a221c;
+  --right: #6fbf8f;
+  --right-bg: #1e2e22;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+.topbar {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 650;
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0 0 2rem;
+  max-width: 52ch;
+}
+
+.panel {
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.4rem;
+}
+
+select {
+  width: 100%;
+  font: inherit;
+  font-family: var(--sans);
+  padding: 0.55rem 0.65rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  border-radius: 2px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+}
+button.secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-weight: 500;
+}
+button:active { transform: translateY(1px); }
+button:focus-visible, select:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.meta-line {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.6rem;
+}
+
+.progress-track {
+  height: 3px;
+  background: var(--rule);
+  margin-bottom: 1.6rem;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.kapitel-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.frage-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1.4rem;
+  line-height: 1.4;
+}
+
+.option {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  padding: 0.8rem 0.9rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.98rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.option:hover:not(:disabled) { border-color: var(--ink-soft); }
+.option .key {
+  font-family: var(--mono);
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+.option.correct {
+  background: var(--right-bg);
+  border-color: var(--right);
+  color: var(--ink);
+}
+.option.correct .key { color: var(--right); }
+.option.wrong {
+  background: var(--wrong-bg);
+  border-color: var(--wrong);
+  color: var(--ink);
+}
+.option.wrong .key { color: var(--wrong); }
+.option:disabled { cursor: default; }
+
+.feedback {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  margin: 0.8rem 0 0;
+  min-height: 1.2rem;
+}
+.feedback.right { color: var(--right); }
+.feedback.wrong { color: var(--wrong); }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+
+.score-big {
+  font-family: var(--mono);
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0.2rem 0 0.3rem;
+}
+
+.hidden { display: none !important; }
+
+footer {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 3rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <span>lpic-1 // pruefungstrainer</span>
+    <span id="clock-tag">101-500 &amp; 102-500</span>
+  </div>
+
+  <div id="screen-start">
+    <h1>LPIC-1 Prüfungstrainer</h1>
+    <p class="sub">84 Prüfungsfragen aus den LPI-Lernmaterialien zu den Prüfungen 101-500 und 102-500. Wähle ein Kapitel und leg los, oder lade den kompletten Fragenkatalog als JSON herunter.</p>
+
+    <div class="panel">
+      <div class="field">
+        <label for="kapitel-select">Kapitel</label>
+        <select id="kapitel-select"></select>
+      </div>
+      <div class="field">
+        <label for="count-select">Anzahl Fragen</label>
+        <select id="count-select"></select>
+      </div>
+      <div class="btn-row">
+        <button id="start-btn">Quiz starten</button>
+        <button class="secondary" id="download-btn">JSON herunterladen</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-quiz" class="hidden">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="meta-line" id="quiz-meta">Frage 1/84</div>
+    <div class="kapitel-tag" id="quiz-kapitel">101.1</div>
+    <div class="frage-text" id="quiz-frage">…</div>
+    <div id="quiz-options"></div>
+    <div class="feedback" id="quiz-feedback"></div>
+    <div class="nav-row">
+      <button class="secondary" id="quit-btn">Abbrechen</button>
+      <button id="next-btn" disabled>Weiter</button>
+    </div>
+  </div>
+
+  <div id="screen-end" class="hidden">
+    <h1>Ergebnis</h1>
+    <p class="sub" id="end-summary">Du hast X von Y Fragen richtig beantwortet.</p>
+    <div class="score-big" id="score-big">0%</div>
+    <div class="btn-row">
+      <button id="restart-btn">Neues Quiz</button>
+      <button class="secondary" id="end-download-btn">JSON herunterladen</button>
+    </div>
+  </div>
+
+  <footer>Quelle: LPI-Learning-Material-101-500-en.pdf, LPI-Learning-Material-102-500-en.pdf — Lizenz CC BY-NC-ND 4.0 (learning.lpi.org)</footer>
+</div>
+
+<script>
+const ALL_QUESTIONS = [{"frage": "Welche zwei Befehle werden primär genutzt, um an ein Linux-System angeschlossene PCI- bzw. USB-Geräte anzuzeigen?", "antwort_a": "lspci und lsusb", "antwort_b": "lsmod und modprobe", "antwort_c": "dmesg und journalctl", "loesung": "lspci und lsusb", "kapitel": "101.1 Hardware-Einstellungen"}, {"frage": "Wie werden Linux-Kernelmodule, die Hardwaregeräte steuern, auch genannt?", "antwort_a": "Treiber (Drivers)", "antwort_b": "Daemons", "antwort_c": "Shared Libraries", "loesung": "Treiber (Drivers)", "kapitel": "101.1 Hardware-Einstellungen"}, {"frage": "Wie groß ist der klassische MBR (Master Boot Record) auf einem BIOS-System?", "antwort_a": "512 Byte", "antwort_b": "4096 Byte", "antwort_c": "1 MB", "loesung": "512 Byte", "kapitel": "101.2 Systemstart"}, {"frage": "Welche Dateisysteme unterstützt die ESP (EFI System Partition) standardmäßig?", "antwort_a": "FAT12, FAT16, FAT32 sowie ISO-9660 für optische Medien", "antwort_b": "ext4 und Btrfs", "antwort_c": "NTFS und ReFS", "loesung": "FAT12, FAT16, FAT32 sowie ISO-9660 für optische Medien", "kapitel": "101.2 Systemstart"}, {"frage": "Welcher Runlevel steht bei SysVinit typischerweise für den Single-User-Modus (Wartungsmodus)?", "antwort_a": "Runlevel 1", "antwort_b": "Runlevel 3", "antwort_c": "Runlevel 5", "loesung": "Runlevel 1", "kapitel": "101.3 Runlevels"}, {"frage": "Welche PID hat der Service-Manager (init bzw. systemd), der als erstes Programm vom Kernel gestartet wird?", "antwort_a": "PID 1", "antwort_b": "PID 0", "antwort_c": "PID 100", "loesung": "PID 1", "kapitel": "101.3 Runlevels"}, {"frage": "Welches Verzeichnis ist der moderne Standard-Mountpunkt für vom Benutzer entfernbare Datenträger (z. B. USB-Sticks)?", "antwort_a": "/media", "antwort_b": "/mnt", "antwort_c": "/dev", "loesung": "/media", "kapitel": "102.1 Festplattenlayout"}, {"frage": "Welches Feature erlaubt es, mehrere Partitionen (auch über mehrere physische Platten hinweg) zu einem logischen Volume zusammenzufassen?", "antwort_a": "LVM (Logical Volume Manager)", "antwort_b": "RAID 0", "antwort_c": "GPT", "loesung": "LVM (Logical Volume Manager)", "kapitel": "102.1 Festplattenlayout"}, {"frage": "Welches Verzeichnis enthält üblicherweise die GRUB-2-Konfigurationsdateien?", "antwort_a": "/boot/grub", "antwort_b": "/etc/grub.d/menu", "antwort_c": "/lib/grub", "loesung": "/boot/grub", "kapitel": "102.2 Bootmanager"}, {"frage": "Wie heißt das Nachfolgeformat des MBR-Partitionsschemas, das u. a. Datenträger über 2 TB unterstützt?", "antwort_a": "GPT (GUID Partition Table)", "antwort_b": "ext4", "antwort_c": "NVRAM", "loesung": "GPT (GUID Partition Table)", "kapitel": "102.2 Bootmanager"}, {"frage": "Wie lautet die Dateiendung von statisch gelinkten Bibliotheken unter Linux, im Gegensatz zu shared libraries (.so)?", "antwort_a": ".a", "antwort_b": ".lib", "antwort_c": ".dll", "loesung": ".a", "kapitel": "102.3 Shared Libraries"}, {"frage": "In welcher Konfigurationsdatei bzw. welchem Verzeichnis wird der Suchpfad für shared libraries üblicherweise konfiguriert?", "antwort_a": "/etc/ld.so.conf (bzw. /etc/ld.so.conf.d/)", "antwort_b": "/etc/environment", "antwort_c": "/etc/profile.d/", "loesung": "/etc/ld.so.conf (bzw. /etc/ld.so.conf.d/)", "kapitel": "102.3 Shared Libraries"}, {"frage": "Mit welchem dpkg-Parameter wird ein Debian-Paket installiert?", "antwort_a": "-i", "antwort_b": "-U", "antwort_c": "-e", "loesung": "-i", "kapitel": "102.4 Debian-Paketmanagement"}, {"frage": "Was passiert, wenn dpkg beim Installieren eines Pakets fehlende Abhängigkeiten feststellt?", "antwort_a": "dpkg listet die fehlenden Pakete auf, kann sie aber nicht selbst auflösen", "antwort_b": "dpkg installiert die Abhängigkeiten automatisch aus dem Internet", "antwort_c": "dpkg bricht ohne jede Fehlermeldung ab", "loesung": "dpkg listet die fehlenden Pakete auf, kann sie aber nicht selbst auflösen", "kapitel": "102.4 Debian-Paketmanagement"}, {"frage": "Mit welchem rpm-Parameter wird ein Paket entfernt (\"erase\")?", "antwort_a": "-e", "antwort_b": "-r", "antwort_c": "-d", "loesung": "-e", "kapitel": "102.5 RPM/YUM-Paketmanagement"}, {"frage": "Welches Kommando steht für \"Dandified YUM\" und gilt als Nachfolger von yum auf RPM-basierten Systemen?", "antwort_a": "dnf", "antwort_b": "zypper", "antwort_c": "apt", "loesung": "dnf", "kapitel": "102.5 RPM/YUM-Paketmanagement"}, {"frage": "Welcher Hypervisor-Typ benötigt kein zugrunde liegendes Betriebssystem und bootet direkt in den Hypervisor (\"bare-metal\")?", "antwort_a": "Type-1-Hypervisor (z. B. Xen)", "antwort_b": "Type-2-Hypervisor (z. B. VirtualBox)", "antwort_c": "Container-Runtime", "loesung": "Type-1-Hypervisor (z. B. Xen)", "kapitel": "102.6 Virtualisierung"}, {"frage": "Welcher Daemon wird typischerweise von KVM zur Erstellung und Verwaltung virtueller Maschinen genutzt?", "antwort_a": "libvirt", "antwort_b": "systemd-nspawn", "antwort_c": "cloud-init", "loesung": "libvirt", "kapitel": "102.6 Virtualisierung"}, {"frage": "Welcher Befehl zeigt das aktuelle Arbeitsverzeichnis an?", "antwort_a": "pwd", "antwort_b": "cd", "antwort_c": "ls", "loesung": "pwd", "kapitel": "103.1 Kommandozeile"}, {"frage": "Mit welcher uname-Option erhält man alle verfügbaren Systeminformationen (Kernel, Architektur etc.) auf einmal?", "antwort_a": "uname -a", "antwort_b": "uname -r", "antwort_c": "uname -s", "loesung": "uname -a", "kapitel": "103.1 Kommandozeile"}, {"frage": "Welcher Befehl berechnet eine SHA-256-Prüfsumme einer Datei?", "antwort_a": "sha256sum", "antwort_b": "md5sum", "antwort_c": "cksum", "loesung": "sha256sum", "kapitel": "103.2 Textfilter"}, {"frage": "Welcher Befehl entfernt aufeinanderfolgende doppelte Zeilen aus einer (i. d. R. vorher sortierten) Eingabe?", "antwort_a": "uniq", "antwort_b": "sort", "antwort_c": "cut", "loesung": "uniq", "kapitel": "103.2 Textfilter"}, {"frage": "Welches Programm wird verwendet, um Dateien und Verzeichnisse in ein Archiv zu packen bzw. daraus zu entpacken?", "antwort_a": "tar", "antwort_b": "gzip", "antwort_c": "dd", "loesung": "tar", "kapitel": "103.3 Dateiverwaltung"}, {"frage": "Welche drei grundlegenden Dateitypen werden in der Lektion zur Dateiverwaltung unterschieden?", "antwort_a": "Reguläre Dateien, Verzeichnisse, Spezialdateien", "antwort_b": "Text-, Binär- und Systemdateien", "antwort_c": "Symbolische Links, Hardlinks und Pipes", "loesung": "Reguläre Dateien, Verzeichnisse, Spezialdateien", "kapitel": "103.3 Dateiverwaltung"}, {"frage": "Welcher Dateideskriptor ist standardmäßig der Standardfehlerkanal (stderr)?", "antwort_a": "2", "antwort_b": "0", "antwort_c": "1", "loesung": "2", "kapitel": "103.4 Streams, Pipes, Redirects"}, {"frage": "Wohin wird die Ausgabe eines Befehls umgeleitet, wenn sie vollständig verworfen werden soll?", "antwort_a": "/dev/null", "antwort_b": "/dev/zero", "antwort_c": "/tmp/discard", "loesung": "/dev/null", "kapitel": "103.4 Streams, Pipes, Redirects"}, {"frage": "Mit welcher Tastenkombination wird ein im Vordergrund laufender Prozess angehalten (suspendiert), um ihn danach z. B. mit bg in den Hintergrund zu schicken?", "antwort_a": "Strg + Z", "antwort_b": "Strg + C", "antwort_c": "Strg + D", "loesung": "Strg + Z", "kapitel": "103.5 Prozesse"}, {"frage": "Welcher Befehl zeigt eine Liste aktiver Hintergrund- und angehaltener Jobs der aktuellen Shell an?", "antwort_a": "jobs", "antwort_b": "ps", "antwort_c": "top", "loesung": "jobs", "kapitel": "103.5 Prozesse"}, {"frage": "Welchen Standard-Prioritätswert (static priority) besitzen normale Prozesse im Linux-Scheduler?", "antwort_a": "120", "antwort_b": "0", "antwort_c": "139", "loesung": "120", "kapitel": "103.6 Prozesspriorität"}, {"frage": "Was gilt für die statischen Prioritäten von Echtzeitprozessen gegenüber normalen Prozessen?", "antwort_a": "Echtzeitprozesse haben immer eine höhere Priorität als normale Prozesse", "antwort_b": "Normale Prozesse haben immer Vorrang vor Echtzeitprozessen", "antwort_c": "Beide Prozessarten haben stets dieselbe Priorität", "loesung": "Echtzeitprozesse haben immer eine höhere Priorität als normale Prozesse", "kapitel": "103.6 Prozesspriorität"}, {"frage": "Welches Zeichen in einem regulären Ausdruck steht für \"beliebiges einzelnes Zeichen\"?", "antwort_a": ". (Punkt)", "antwort_b": "* (Stern)", "antwort_c": "^ (Caret)", "loesung": ". (Punkt)", "kapitel": "103.7 Reguläre Ausdrücke"}, {"frage": "Wofür stehen die Anker ^ und $ in einem regulären Ausdruck?", "antwort_a": "Anfang bzw. Ende einer Zeile", "antwort_b": "Beginn bzw. Ende eines Worts", "antwort_c": "Ein optionales bzw. verpflichtendes Zeichen", "loesung": "Anfang bzw. Ende einer Zeile", "kapitel": "103.7 Reguläre Ausdrücke"}, {"frage": "In welchem vi-Modus wird eingegebener Text direkt auf dem Bildschirm als Zeicheneingabe übernommen?", "antwort_a": "Insert-Modus (Einfügemodus)", "antwort_b": "Normal-Modus (Kommandomodus)", "antwort_c": "Visual-Modus", "loesung": "Insert-Modus (Einfügemodus)", "kapitel": "103.8 Dateibearbeitung mit vi"}, {"frage": "Mit welcher Taste verlässt man in vi den Insert-Modus und kehrt zum Normal-Modus zurück?", "antwort_a": "Esc", "antwort_b": "Tab", "antwort_c": "Strg + X", "loesung": "Esc", "kapitel": "103.8 Dateibearbeitung mit vi"}, {"frage": "Welche zwei Haupt-Partitionierungsschemata für Festplatten werden unterschieden?", "antwort_a": "MBR und GPT", "antwort_b": "FAT und NTFS", "antwort_c": "ext2 und XFS", "loesung": "MBR und GPT", "kapitel": "104.1 Partitionen und Dateisysteme"}, {"frage": "Welche Begrenzung besitzt das klassische MBR-Partitionsschema hinsichtlich der Anzahl primärer Partitionen?", "antwort_a": "Maximal 4 primäre Partitionen", "antwort_b": "Maximal 8 primäre Partitionen", "antwort_c": "Keine Begrenzung", "loesung": "Maximal 4 primäre Partitionen", "kapitel": "104.1 Partitionen und Dateisysteme"}, {"frage": "Welcher Befehl zeigt die Auslastung von Dateisystemen (freier/genutzter Speicherplatz je Mountpunkt) an?", "antwort_a": "df", "antwort_b": "du", "antwort_c": "fsck", "loesung": "df", "kapitel": "104.2 Dateisystemintegrität"}, {"frage": "Wofür steht der Befehl du in Bezug auf seine Grundfunktion?", "antwort_a": "\"disk usage\" – zeigt den durch Dateien/Verzeichnisse belegten Speicherplatz", "antwort_b": "\"disk unmount\" – hängt ein Dateisystem aus", "antwort_c": "\"data update\" – aktualisiert Metadaten eines Dateisystems", "loesung": "\"disk usage\" – zeigt den durch Dateien/Verzeichnisse belegten Speicherplatz", "kapitel": "104.2 Dateisystemintegrität"}, {"frage": "Wie lautet die grundlegende Syntax, um ein Dateisystem manuell zu mounten?", "antwort_a": "mount -t TYP GERÄT MOUNTPOINT", "antwort_b": "umount -t TYP GERÄT", "antwort_c": "fdisk -m GERÄT MOUNTPOINT", "loesung": "mount -t TYP GERÄT MOUNTPOINT", "kapitel": "104.3 Mounten/Unmounten"}, {"frage": "Welche Voraussetzung muss ein Mountpoint-Verzeichnis erfüllen, bevor ein Dateisystem dort gemountet werden kann?", "antwort_a": "Es muss bereits existieren (kann aber Inhalte haben, die währenddessen unzugänglich werden)", "antwort_b": "Es muss leer und beschreibbar für alle Benutzer sein", "antwort_c": "Es muss sich zwingend unter /mnt befinden", "loesung": "Es muss bereits existieren (kann aber Inhalte haben, die währenddessen unzugänglich werden)", "kapitel": "104.3 Mounten/Unmounten"}, {"frage": "Wie viele Berechtigungsebenen (Sets) besitzt eine Linux-Datei im klassischen Rechtemodell?", "antwort_a": "Drei: Owner, Group, Others", "antwort_b": "Zwei: Owner und Others", "antwort_c": "Vier: Root, Owner, Group, Others", "loesung": "Drei: Owner, Group, Others", "kapitel": "104.5 Dateiberechtigungen"}, {"frage": "Welcher Befehl ändert den Eigentümer (User) einer Datei?", "antwort_a": "chown", "antwort_b": "chmod", "antwort_c": "chgrp", "loesung": "chown", "kapitel": "104.5 Dateiberechtigungen"}, {"frage": "Was passiert mit einem symbolischen Link, wenn die Zieldatei gelöscht wird?", "antwort_a": "Der Link bleibt bestehen, zeigt aber ins Leere (\"broken link\")", "antwort_b": "Der Link wird automatisch mitgelöscht", "antwort_c": "Der Link wird zur Kopie der Zieldatei", "loesung": "Der Link bleibt bestehen, zeigt aber ins Leere (\"broken link\")", "kapitel": "104.6 Hard- und Symlinks"}, {"frage": "Worauf verweisen Hardlinks technisch gesehen?", "antwort_a": "Auf dieselbe Inode wie die Originaldatei", "antwort_b": "Auf den Pfad der Originaldatei", "antwort_c": "Auf eine Kopie der Originaldatei im /tmp-Verzeichnis", "loesung": "Auf dieselbe Inode wie die Originaldatei", "kapitel": "104.6 Hard- und Symlinks"}, {"frage": "Wofür steht die Abkürzung FHS, die die Standard-Verzeichnisstruktur unter Linux definiert?", "antwort_a": "Filesystem Hierarchy Standard", "antwort_b": "File Handling System", "antwort_c": "Fixed Hierarchy Setup", "loesung": "Filesystem Hierarchy Standard", "kapitel": "104.7 FHS und Dateisuche"}, {"frage": "In welchem Verzeichnis liegen essentielle Programme (Binaries), die allen Benutzern zur Verfügung stehen?", "antwort_a": "/bin", "antwort_b": "/opt", "antwort_c": "/srv", "loesung": "/bin", "kapitel": "104.7 FHS und Dateisuche"}, {"frage": "Welche Datei wird üblicherweise als systemweites Startskript für interaktive Login-Shells gelesen?", "antwort_a": "/etc/profile", "antwort_b": "/etc/environment.d/", "antwort_c": "/etc/bash.aliases", "loesung": "/etc/profile", "kapitel": "105.1 Shell-Umgebung"}, {"frage": "Womit werden Umgebungsvariablen exportiert, damit sie auch in Kindprozessen verfügbar sind?", "antwort_a": "export", "antwort_b": "source", "antwort_c": "set", "loesung": "export", "kapitel": "105.1 Shell-Umgebung"}, {"frage": "Mit welcher Zeichenfolge am Skriptanfang (Shebang) wird festgelegt, dass ein Skript von /bin/bash interpretiert werden soll?", "antwort_a": "#!/bin/bash", "antwort_b": "##!bash", "antwort_c": "#!bash-exec", "loesung": "#!/bin/bash", "kapitel": "105.2 Shell-Skripte"}, {"frage": "Was ist notwendig, damit ein Shell-Skript direkt (ohne vorangestellten Interpreteraufruf) ausgeführt werden kann?", "antwort_a": "Es muss das Ausführungsrecht (x) besitzen", "antwort_b": "Es muss auf .sh enden", "antwort_c": "Es muss root gehören", "loesung": "Es muss das Ausführungsrecht (x) besitzen", "kapitel": "105.2 Shell-Skripte"}, {"frage": "Wie wird die Kommunikationsschnittstelle zwischen X-Client und X-Server bezeichnet?", "antwort_a": "X11-Protokoll (X-Protokoll)", "antwort_b": "Wayland-Protokoll", "antwort_c": "XDMCP", "loesung": "X11-Protokoll (X-Protokoll)", "kapitel": "106.1 X11"}, {"frage": "Welche Umgebungsvariable gibt an, mit welchem X-Server sich ein X-Client verbinden soll?", "antwort_a": "DISPLAY", "antwort_b": "XSERVER", "antwort_c": "SCREEN", "loesung": "DISPLAY", "kapitel": "106.1 X11"}, {"frage": "Welche Komponente einer Desktop-Umgebung ist primär für Fensterplatzierung, Titelleisten und das Umschalten zwischen Fenstern zuständig?", "antwort_a": "Der Window Manager", "antwort_b": "Der Display Manager", "antwort_c": "Der X-Server", "loesung": "Der Window Manager", "kapitel": "106.2 Grafische Desktops"}, {"frage": "Welches Protokoll ermöglicht klassischerweise den Zugriff auf entfernte grafische X-Sitzungen über das Netzwerk?", "antwort_a": "XDMCP", "antwort_b": "SMTP", "antwort_c": "NFS", "loesung": "XDMCP", "kapitel": "106.2 Grafische Desktops"}, {"frage": "Wie heißt das Zugänglichkeits-Feature, das erlaubt, Tastenkombinationen nacheinander statt gleichzeitig zu drücken (z. B. Strg dann C)?", "antwort_a": "Sticky Keys", "antwort_b": "Bounce Keys", "antwort_c": "Slow Keys", "loesung": "Sticky Keys", "kapitel": "106.3 Barrierefreiheit"}, {"frage": "Wie heißt das Gnome-Konfigurationsmodul, über das Barrierefreiheitseinstellungen vorgenommen werden?", "antwort_a": "Universal Access", "antwort_b": "Accessibility Center", "antwort_c": "System Settings", "loesung": "Universal Access", "kapitel": "106.3 Barrierefreiheit"}, {"frage": "Mit welchem Befehl legt man unter Linux einen neuen Benutzeraccount an?", "antwort_a": "useradd", "antwort_b": "adduser -sys", "antwort_c": "newuser", "loesung": "useradd", "kapitel": "107.1 Benutzer- und Gruppenverwaltung"}, {"frage": "In welcher Datei werden die gehashten Passwörter der lokalen Benutzer gespeichert (nicht in /etc/passwd)?", "antwort_a": "/etc/shadow", "antwort_b": "/etc/gshadow", "antwort_c": "/etc/security/passwd", "loesung": "/etc/shadow", "kapitel": "107.1 Benutzer- und Gruppenverwaltung"}, {"frage": "Wie viele durch Leerzeichen getrennte Felder besitzt eine Zeile in einer User-Crontab (inkl. Befehl)?", "antwort_a": "Sechs", "antwort_b": "Fünf", "antwort_c": "Sieben", "loesung": "Sechs", "kapitel": "107.2 Cron und at"}, {"frage": "Welcher Daemon eignet sich besonders für Systeme, die nicht dauerhaft eingeschaltet sind (z. B. Laptops), und kann nur von root genutzt werden?", "antwort_a": "anacron", "antwort_b": "cron", "antwort_c": "systemd-run", "loesung": "anacron", "kapitel": "107.2 Cron und at"}, {"frage": "Wie lautet die Abkürzung für die koordinierte Weltzeit, auf die sich Zeitzonen beziehen?", "antwort_a": "UTC", "antwort_b": "GMT+1", "antwort_c": "TZS", "loesung": "UTC", "kapitel": "107.3 Lokalisierung"}, {"frage": "Welche Umgebungsvariable überschreibt alle LC_*-Einstellungen für die Locale, unabhängig von deren einzelnen Werten?", "antwort_a": "LC_ALL", "antwort_b": "LANG", "antwort_c": "TZ", "loesung": "LC_ALL", "kapitel": "107.3 Lokalisierung"}, {"frage": "In welchem Zeitstandard wird die Systemzeit (system clock) unter Linux empfohlenermaßen geführt?", "antwort_a": "UTC (Coordinated Universal Time)", "antwort_b": "Lokalzeit mit Sommerzeit", "antwort_c": "GMT+1 fest codiert", "loesung": "UTC (Coordinated Universal Time)", "kapitel": "108.1 Systemzeit"}, {"frage": "Welches Protokoll wird zur Synchronisation von System- und Hardwarezeit über das Netzwerk verwendet?", "antwort_a": "NTP (Network Time Protocol)", "antwort_b": "SNTP-Legacy", "antwort_c": "RTC-Sync", "loesung": "NTP (Network Time Protocol)", "kapitel": "108.1 Systemzeit"}, {"frage": "Welcher moderne Syslog-Daemon gilt heute als der am weitesten verbreitete Nachfolger von syslog?", "antwort_a": "rsyslog", "antwort_b": "syslog-ng", "antwort_c": "journald-classic", "loesung": "rsyslog", "kapitel": "108.2 System-Logging"}, {"frage": "Mit welchem Befehl werden die Journal-Logs von systemd-journald abgefragt?", "antwort_a": "journalctl", "antwort_b": "logger", "antwort_c": "logrotate", "loesung": "journalctl", "kapitel": "108.2 System-Logging"}, {"frage": "Über welches Protokoll übertragen sich MTAs (Mail Transfer Agents) E-Mails untereinander im Standardfall?", "antwort_a": "SMTP (Simple Mail Transfer Protocol)", "antwort_b": "IMAP", "antwort_c": "POP3", "loesung": "SMTP (Simple Mail Transfer Protocol)", "kapitel": "108.3 MTA-Grundlagen"}, {"frage": "Welche Datei im Home-Verzeichnis eines Benutzers wird genutzt, um eingehende lokale E-Mails automatisch weiterzuleiten?", "antwort_a": "~/.forward", "antwort_b": "~/.mailrc", "antwort_c": "~/.aliases", "loesung": "~/.forward", "kapitel": "108.3 MTA-Grundlagen"}, {"frage": "Wie lautet die Abkürzung für das unter Linux gebräuchliche Drucksystem?", "antwort_a": "CUPS (Common Unix Printing System)", "antwort_b": "LPD-Legacy", "antwort_c": "PPD", "loesung": "CUPS (Common Unix Printing System)", "kapitel": "108.4 Drucker und Druckaufträge"}, {"frage": "Wie heißt der zentrale Daemon-Prozess von CUPS, der Druckaufträge entgegennimmt (spoolt)?", "antwort_a": "cupsd", "antwort_b": "lpd", "antwort_c": "printcore", "loesung": "cupsd", "kapitel": "108.4 Drucker und Druckaufträge"}, {"frage": "Aus wie vielen Bit besteht eine IPv4-Adresse?", "antwort_a": "32 Bit", "antwort_b": "64 Bit", "antwort_c": "128 Bit", "loesung": "32 Bit", "kapitel": "109.1 Internet-Grundlagen"}, {"frage": "Welcher TCP-Port ist standardmäßig für SMTP-Kommunikation reserviert?", "antwort_a": "25", "antwort_b": "80", "antwort_c": "110", "loesung": "25", "kapitel": "109.1 Internet-Grundlagen"}, {"frage": "In welcher Datei wird der Hostname eines Linux-Systems dauerhaft gespeichert?", "antwort_a": "/etc/hostname", "antwort_b": "/etc/hosts", "antwort_c": "/etc/resolv.conf", "loesung": "/etc/hostname", "kapitel": "109.2 Persistente Netzwerkkonfiguration"}, {"frage": "Welches Kommando wird genutzt, um NetworkManager-Verbindungen über die Kommandozeile zu konfigurieren?", "antwort_a": "nmcli", "antwort_b": "ifconfig", "antwort_c": "route", "loesung": "nmcli", "kapitel": "109.2 Persistente Netzwerkkonfiguration"}, {"frage": "Mit welchem Befehl lassen sich Netzwerkschnittstellen unter Linux mittels iproute2 anzeigen (z. B. ip link show)?", "antwort_a": "ip", "antwort_b": "netstat", "antwort_c": "ifconfig (legacy)", "loesung": "ip", "kapitel": "109.3 Netzwerk-Troubleshooting"}, {"frage": "Welches klassische Tool aus net-tools wird in modernen Systemen zunehmend durch den Befehl ss ersetzt?", "antwort_a": "netstat", "antwort_b": "traceroute", "antwort_c": "ping", "loesung": "netstat", "kapitel": "109.3 Netzwerk-Troubleshooting"}, {"frage": "Welche Datei liest glibc zuerst aus, um festzulegen, in welcher Reihenfolge Namen (z. B. Hostnamen) aufgelöst werden?", "antwort_a": "/etc/nsswitch.conf", "antwort_b": "/etc/hosts.conf", "antwort_c": "/etc/resolv.order", "loesung": "/etc/nsswitch.conf", "kapitel": "109.4 Client-seitiges DNS"}, {"frage": "Welche DNS-Klasse wird für gewöhnliche Internetadressen im TCP/IP-Stack verwendet?", "antwort_a": "IN", "antwort_b": "CH", "antwort_c": "HS", "loesung": "IN", "kapitel": "109.4 Client-seitiges DNS"}, {"frage": "Wie wird das SUID-Bit numerisch dargestellt?", "antwort_a": "4000", "antwort_b": "2000", "antwort_c": "1000", "loesung": "4000", "kapitel": "110.1 Sicherheitsadministration"}, {"frage": "Welches Tool wird typischerweise genutzt, um offene Ports auf einem System zu erkennen (neben netstat)?", "antwort_a": "nmap", "antwort_b": "fsck", "antwort_c": "chage", "loesung": "nmap", "kapitel": "110.1 Sicherheitsadministration"}, {"frage": "Wie viele Felder besitzt ein Eintrag in der Datei /etc/passwd?", "antwort_a": "Sieben", "antwort_b": "Fünf", "antwort_c": "Neun", "loesung": "Sieben", "kapitel": "110.2 Host-Sicherheit"}, {"frage": "Welches Zeichen steht im Passwortfeld von /etc/passwd, wenn das gehashte Passwort stattdessen in /etc/shadow gespeichert ist?", "antwort_a": "x", "antwort_b": "*", "antwort_c": "!", "loesung": "x", "kapitel": "110.2 Host-Sicherheit"}, {"frage": "Welches Protokoll wird als sichere, verschlüsselte Alternative zu telnet, rlogin und FTP für den Fernzugriff eingesetzt?", "antwort_a": "SSH (Secure Shell)", "antwort_b": "SNMP", "antwort_c": "RDP", "loesung": "SSH (Secure Shell)", "kapitel": "110.3 Verschlüsselung"}, {"frage": "Welche aktuell empfohlene Protokollversion nutzt SSH?", "antwort_a": "SSH-Protokoll 2.0", "antwort_b": "SSH-Protokoll 1.0", "antwort_c": "SSH-Protokoll 3.0", "loesung": "SSH-Protokoll 2.0", "kapitel": "110.3 Verschlüsselung"}];
+
+function uniqueKapitel(qs) {
+  const seen = [];
+  qs.forEach(q => { if (!seen.includes(q.kapitel)) seen.push(q.kapitel); });
+  return seen;
+}
+
+const kapitelSelect = document.getElementById('kapitel-select');
+const countSelect = document.getElementById('count-select');
+const kapitelList = uniqueKapitel(ALL_QUESTIONS);
+
+const optAll = document.createElement('option');
+optAll.value = '__all__';
+optAll.textContent = `Alle Kapitel (${ALL_QUESTIONS.length} Fragen)`;
+kapitelSelect.appendChild(optAll);
+
+kapitelList.forEach(k => {
+  const count = ALL_QUESTIONS.filter(q => q.kapitel === k).length;
+  const opt = document.createElement('option');
+  opt.value = k;
+  opt.textContent = `${k} (${count})`;
+  kapitelSelect.appendChild(opt);
+});
+
+function refreshCountOptions() {
+  const kap = kapitelSelect.value;
+  const pool = kap === '__all__' ? ALL_QUESTIONS : ALL_QUESTIONS.filter(q => q.kapitel === kap);
+  countSelect.innerHTML = '';
+  const options = [5, 10, 20, pool.length].filter((v, i, arr) => v <= pool.length && arr.indexOf(v) === i);
+  options.forEach(n => {
+    const opt = document.createElement('option');
+    opt.value = n;
+    opt.textContent = n === pool.length ? `Alle (${n})` : String(n);
+    countSelect.appendChild(opt);
+  });
+  countSelect.value = options[options.length - 1];
+}
+kapitelSelect.addEventListener('change', refreshCountOptions);
+refreshCountOptions();
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function downloadJSON() {
+  const payload = {
+    quelle: "LPI-Learning-Material-101-500-en.pdf, LPI-Learning-Material-102-500-en.pdf",
+    erstellt_am: new Date().toISOString().slice(0, 10),
+    fragen: ALL_QUESTIONS
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lpi-pruefungsfragen.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+document.getElementById('download-btn').addEventListener('click', downloadJSON);
+document.getElementById('end-download-btn').addEventListener('click', downloadJSON);
+
+const screenStart = document.getElementById('screen-start');
+const screenQuiz = document.getElementById('screen-quiz');
+const screenEnd = document.getElementById('screen-end');
+
+let quizQuestions = [];
+let quizIndex = 0;
+let quizScore = 0;
+let answered = false;
+
+document.getElementById('start-btn').addEventListener('click', () => {
+  const kap = kapitelSelect.value;
+  const pool = kap === '__all__' ? ALL_QUESTIONS : ALL_QUESTIONS.filter(q => q.kapitel === kap);
+  const n = parseInt(countSelect.value, 10);
+  quizQuestions = shuffle(pool).slice(0, n);
+  quizIndex = 0;
+  quizScore = 0;
+  screenStart.classList.add('hidden');
+  screenEnd.classList.add('hidden');
+  screenQuiz.classList.remove('hidden');
+  renderQuestion();
+});
+
+document.getElementById('quit-btn').addEventListener('click', () => {
+  screenQuiz.classList.add('hidden');
+  screenStart.classList.remove('hidden');
+});
+
+document.getElementById('restart-btn').addEventListener('click', () => {
+  screenEnd.classList.add('hidden');
+  screenStart.classList.remove('hidden');
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  quizIndex++;
+  if (quizIndex >= quizQuestions.length) {
+    showEnd();
+  } else {
+    renderQuestion();
+  }
+});
+
+function renderQuestion() {
+  answered = false;
+  const q = quizQuestions[quizIndex];
+  document.getElementById('progress-fill').style.width = `${(quizIndex / quizQuestions.length) * 100}%`;
+  document.getElementById('quiz-meta').textContent = `Frage ${quizIndex + 1}/${quizQuestions.length}`;
+  document.getElementById('quiz-kapitel').textContent = q.kapitel;
+  document.getElementById('quiz-frage').textContent = q.frage;
+  document.getElementById('quiz-feedback').textContent = '';
+  document.getElementById('quiz-feedback').className = 'feedback';
+  document.getElementById('next-btn').disabled = true;
+
+  const optionsWrap = document.getElementById('quiz-options');
+  optionsWrap.innerHTML = '';
+  const labels = ['A', 'B', 'C'];
+  const opts = shuffle([
+    { text: q.antwort_a, correct: q.antwort_a === q.loesung },
+    { text: q.antwort_b, correct: q.antwort_b === q.loesung },
+    { text: q.antwort_c, correct: q.antwort_c === q.loesung }
+  ]);
+
+  opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = `<span class="key">${labels[i]}</span><span>${opt.text}</span>`;
+    btn.addEventListener('click', () => selectOption(btn, opt, opts, optionsWrap));
+    optionsWrap.appendChild(btn);
+  });
+}
+
+function selectOption(btn, opt, opts, wrap) {
+  if (answered) return;
+  answered = true;
+  const buttons = wrap.querySelectorAll('.option');
+  buttons.forEach(b => b.disabled = true);
+
+  const feedback = document.getElementById('quiz-feedback');
+  if (opt.correct) {
+    btn.classList.add('correct');
+    quizScore++;
+    feedback.textContent = 'Richtig.';
+    feedback.className = 'feedback right';
+  } else {
+    btn.classList.add('wrong');
+    feedback.textContent = `Falsch. Lösung: ${quizQuestions[quizIndex].loesung}`;
+    feedback.className = 'feedback wrong';
+    buttons.forEach((b, i) => {
+      if (opts[i].correct) b.classList.add('correct');
+    });
+  }
+  document.getElementById('next-btn').disabled = false;
+}
+
+function showEnd() {
+  screenQuiz.classList.add('hidden');
+  screenEnd.classList.remove('hidden');
+  const pct = Math.round((quizScore / quizQuestions.length) * 100);
+  document.getElementById('end-summary').textContent = `Du hast ${quizScore} von ${quizQuestions.length} Fragen richtig beantwortet.`;
+  document.getElementById('score-big').textContent = `${pct}%`;
+}
+</script>
+</body>
+</html>

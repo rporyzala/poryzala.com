@@ -1,0 +1,164 @@
+# Konfiguration für Pages CMS (https://app.pagescms.org) – Login mit GitHub.
+# Jede Speicherung ist ein Git-Commit; Cloudflare Pages baut die Seite danach automatisch neu.
+# Texte: **fett**, [Linktext](https://…), Leerzeile = neuer Absatz, "### " = Zwischenüberschrift.
+
+media:
+  input: static/media
+  output: /media
+
+content:
+  - name: site
+    label: Website-Texte
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: meta
+        label: Suchmaschinen (Titel & Beschreibung)
+        type: object
+        fields:
+          - { name: title, label: Seitentitel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+
+      - name: hero
+        label: Kopfbereich
+        type: object
+        fields:
+          - { name: status, label: Status-Zeile (orange), type: string }
+          - { name: name, label: Name, type: string }
+          - { name: subtitle, label: Untertitel, type: string }
+          - { name: lead, label: Einleitung, type: text }
+          - { name: button_primary, label: Button Kontakt, type: string }
+          - { name: button_secondary, label: Button GitHub, type: string }
+          - { name: github_url, label: GitHub-Link, type: string }
+          - { name: show_terminal, label: Terminal-Box anzeigen, type: boolean }
+
+      - name: profil
+        label: Profil
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+
+      - name: praxis
+        label: Praxiserfahrung
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: items
+            label: Einträge
+            type: object
+            list: true
+            fields:
+              - { name: when, label: Zeitraum, type: string }
+              - { name: title, label: Titel, type: string }
+              - { name: text, label: Beschreibung, type: text }
+              - { name: bullets, label: Aufzählungspunkte, type: string, list: true }
+              - { name: tags, label: Tags, type: string, list: true }
+
+      - name: zertifikate
+        label: Zertifizierungen
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: items
+            label: Zertifikate
+            type: object
+            list: true
+            fields:
+              - name: status
+                label: Status
+                type: select
+                options:
+                  values:
+                    - { value: ok, label: "✓ bestanden" }
+                    - { value: wip, label: "● in Prüfung" }
+                    - { value: plan, label: "○ geplant" }
+              - { name: title, label: Titel, type: string }
+              - { name: meta, label: Datum / Punkte, type: string }
+              - { name: text, label: Beschreibung, type: text }
+              - { name: link_label, label: Link-Text (optional), type: string }
+              - { name: link_url, label: Link-Adresse (optional), type: string }
+
+      - name: projekte
+        label: Projekte
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: items
+            label: Projekte
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Titel, type: string }
+              - { name: text, label: Beschreibung, type: text }
+              - { name: tags, label: Tags, type: string, list: true }
+              - { name: link_label, label: Link-Text (optional), type: string }
+              - { name: link_url, label: Link-Adresse (optional), type: string }
+
+      - name: skills
+        label: Skills
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: groups
+            label: Gruppen
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Gruppenname, type: string }
+              - { name: items, label: Einträge, type: string, list: true }
+
+      - name: werdegang
+        label: Werdegang
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: items
+            label: Stationen
+            type: object
+            list: true
+            fields:
+              - { name: when, label: Zeitraum, type: string }
+              - { name: title, label: Titel, type: string }
+              - { name: text, label: Beschreibung, type: text }
+              - { name: current, label: Aktuell (orangener Punkt), type: boolean }
+
+      - name: kontakt
+        label: Kontakt
+        type: object
+        fields:
+          - { name: kicker, label: Kleines Label, type: string }
+          - { name: title, label: Überschrift, type: string }
+          - name: items
+            label: Kontaktwege
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Bezeichnung, type: string }
+              - { name: value, label: Anzeigetext, type: string }
+              - { name: url, label: "Link (mailto:, https:// oder leer)", type: string }
+
+      - name: footer
+        label: Fußzeile
+        type: object
+        fields:
+          - { name: text, label: Text, type: string }
+
+      - name: impressum
+        label: Impressum
+        type: object
+        fields:
+          - { name: text, label: Text, type: text }
+
+      - name: datenschutz
+        label: Datenschutzerklärung
+        type: object
+        fields:
+          - { name: text, label: Text, type: text }
