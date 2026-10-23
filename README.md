@@ -34,7 +34,7 @@ git init
 git add .
 git commit -m "Neue statische Website"
 git branch -M main
-git remote add origin git@github.com:B0B-X/poryzala-site.git
+git remote add origin git@github.com:rporyzala/poryzala.com.git
 git push -u origin main
 ```
 
@@ -76,7 +76,7 @@ Jedes Speichern ist ein Git-Commit. Ältere Versionen lassen sich jederzeit auf 
 | Eingabe | Ergebnis |
 |---|---|
 | `**wichtig**` | **wichtig** |
-| `[GitHub](https://github.com/B0B-X)` | Link |
+| `[GitHub](https://github.com/rporyzala)` | Link |
 | Leerzeile | neuer Absatz |
 | `### Titel` | Zwischenüberschrift (Impressum/Datenschutz) |
 
