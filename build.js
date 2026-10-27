@@ -246,6 +246,7 @@ if (fs.existsSync(designFile)) {
 <title>${esc(g.title)} – Robert Poryzała</title>
 <meta name="description" content="${esc(g.intro)}">
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="canonical" href="https://poryzala.com/design/">
 <link rel="stylesheet" href="/style.css">
 <style>
 ${filterCss}
