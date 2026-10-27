@@ -64,7 +64,7 @@ const html = `<!doctype html>
 <meta name="description" content="${esc(c.meta.description)}">
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
-<link rel="canonical" href="https://poryzala.com/" />
+`<link rel="canonical" href="https://poryzala.com/${page.path}" />`
 </head>
 <body>
 
