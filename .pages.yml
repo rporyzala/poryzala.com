@@ -19,6 +19,7 @@ content:
         fields:
           - { name: title, label: Seitentitel, type: string }
           - { name: description, label: Beschreibung, type: text }
+          - { name: analytics_token, label: "Cloudflare Web Analytics Token (leer = aus)", type: string }
 
       - name: hero
         label: Kopfbereich

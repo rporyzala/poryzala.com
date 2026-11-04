@@ -38,6 +38,12 @@ const tags = (t = []) => (t.length ? `<div class="tags">${t.map((x) => `<span>${
 const link = (label, url) => (label && safeUrl(url) ? `<a class="more" href="${safeUrl(url)}">${esc(label)}</a>` : "");
 const bullets = (b = []) => (b.length ? `<ul class="list">${b.map((x) => `<li>${inline(x)}</li>`).join("")}</ul>` : "");
 
+
+// Cloudflare Web Analytics (ohne Cookies). Token in content/site.json → meta.analytics_token; leer = aus
+const beacon = c.meta && /^[a-f0-9]{32}$/i.test(c.meta.analytics_token || "")
+  ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${c.meta.analytics_token}"}'></script>\n`
+  : "";
+
 const sections = [
   ["profil", "Profil"],
   ["praxis", "Praxis"],
@@ -64,7 +70,6 @@ const html = `<!doctype html>
 <meta name="description" content="${esc(c.meta.description)}">
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
-<link rel="canonical" href="https://poryzala.com/">
 </head>
 <body>
 
@@ -90,10 +95,10 @@ ${sections.map(([id, label]) => `        <li><a href="#${id}">${label}</a></li>`
       ${safeUrl(h.github_url) ? `<a class="btn" href="${safeUrl(h.github_url)}" rel="noopener">${esc(h.button_secondary)}</a>` : ""}
     </div>
 ${h.show_terminal ? `    <pre class="term"><span class="p">robert@<span class="h">pi5</span>:~$</span> docker compose ps --format '{{.Name}}\\t{{.Status}}'
-nextcloud-app     Up
-nextcloud-nginx   Up
-nextcloud-db      Up
-adguard           Up
+nextcloud-app     Up 12 days
+nextcloud-nginx   Up 12 days
+nextcloud-db      Up 12 days
+adguard           Up 12 days
 <span class="p">robert@<span class="h">pi5</span>:~$</span> <span class="c"># selbst gehostet, selbst gewartet, selbst abgesichert</span></pre>` : ""}
   </div>
 
@@ -217,7 +222,7 @@ ${c.kontakt.items
   ${md(c.datenschutz.text)}
 </div></div>
 
-</body>
+${beacon}</body>
 </html>
 `;
 
@@ -246,7 +251,6 @@ if (fs.existsSync(designFile)) {
 <title>${esc(g.title)} – Robert Poryzała</title>
 <meta name="description" content="${esc(g.intro)}">
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="canonical" href="https://poryzala.com/design/">
 <link rel="stylesheet" href="/style.css">
 <style>
 ${filterCss}
@@ -317,7 +321,7 @@ ${p.images.map((i) => `    <a href="${safeUrl(i.src)}" target="_blank" rel="noop
   </div>
 </footer>
 
-</body>
+${beacon}</body>
 </html>
 `;
 }
