@@ -1,8 +1,7 @@
 {
   "meta": {
     "title": "Robert Poryzala – Fachinformatiker für Systemintegration (System Integration Specialist)",
-    "description": "Robert Poryzala – Umschüler zum Fachinformatiker für Systemintegration in Berlin. Praktikum gesucht: 07.06.2027–04.02.2028.",
-    "analytics_token": "7317f1cc5ecf4fb79875a210e5945fb6"
+    "description": "Robert Poryzala – Umschüler zum Fachinformatiker für Systemintegration in Berlin. Praktikum gesucht: 07.06.2027–04.02.2028."
   },
   "hero": {
     "status": "Praktikum gesucht · 07.06.2027–04.02.2028 · Berlin",
@@ -105,7 +104,7 @@
       {
         "status": "wip",
         "title": "LPIC-1 · Linux Administrator",
-        "meta": "Prüfung 101: bestannden, 800/800, 100% | 102: Nov. 2026",
+        "meta": "Prüfung 101: bestannden, 800/800, 100% | 102: bestannden, 780/800, 91%",
         "text": "Systemarchitektur, Paketverwaltung, Shell, Dateisysteme, Netzwerk, Sicherheit.",
         "link_label": "Mein Prüfungstrainer →",
         "link_url": "/lpic/"
@@ -119,7 +118,7 @@
       {
         "status": "plan",
         "title": "Cisco CCNA",
-        "meta": "02/2027",
+        "meta": "03-04/2027",
         "text": "Routing, Switching, VLANs, IP-Services und Netzwerksicherheit."
       }
     ]
