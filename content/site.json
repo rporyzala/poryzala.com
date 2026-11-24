@@ -102,7 +102,7 @@
         "link_url": "https://learn.microsoft.com/api/credentials/share/en-gb/RobertPoryzala-2029/1072B1DCA21C2220?sharingId=ED37A16445076AEC"
       },
       {
-        "status": "wip",
+        "status": "ok",
         "title": "LPIC-1 · Linux Administrator",
         "meta": "Prüfung 101: bestannden, 800/800, 100% | 102: bestannden, 780/800, 91%",
         "text": "Systemarchitektur, Paketverwaltung, Shell, Dateisysteme, Netzwerk, Sicherheit.",
@@ -138,6 +138,10 @@
           "Cloudflare Tunnel",
           "AdGuard"
         ]
+      },
+      {
+        "title": "Proxmox-Homelab",
+        "text": "Virtualisierungs-Lab für Windows- und Linux-Systemintegration | seit November 2026\n\n• Proxmox VE als Hypervisor auf einem iMac18,2 (i5-7400, 32 GB RAM, SSD), per LAN angebunden mit statischer IP\n• VMs: Windows 11, Windows Server 2025, Ubuntu und Debian\n• Zweck: Übungsumgebung für Active Directory, Gruppenrichtlinien, Intune/Entra-Szenarien und Linux-Administration (LPIC)\n• Ergänzt die Umschulungs-Labs (Hyper-V) um eine eigene, dauerhaft verfügbare Umgebung\n\nTechnologien: iMac 18,2, Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz, 32 GB RAM, Proxmox VE, Windows Server 2025, Windows 11, Debian, Ubuntu"
       },
       {
         "title": "Hybride Identität: AD + Entra ID + Intune",
@@ -259,10 +263,6 @@
           "Markdown",
           "Dokumentation"
         ]
-      },
-      {
-        "title": "Proxmox-Homelab",
-        "text": "Virtualisierungs-Lab für Windows- und Linux-Systemintegration | seit November 2026\n\n• Proxmox VE als Hypervisor auf einem iMac18,2 (i5-7400, 32 GB RAM, SSD), per LAN angebunden mit statischer IP\n• VMs: Windows 11, Windows Server 2025, Ubuntu und Debian\n• Zweck: Übungsumgebung für Active Directory, Gruppenrichtlinien, Intune/Entra-Szenarien und Linux-Administration (LPIC)\n• Ergänzt die Umschulungs-Labs (Hyper-V) um eine eigene, dauerhaft verfügbare Umgebung\n\nTechnologien: iMac 18,2, Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz, 32 GB RAM, Proxmox VE, Windows Server 2025, Windows 11, Debian, Ubuntu"
       }
     ]
   },
