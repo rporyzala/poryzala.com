@@ -141,7 +141,14 @@
       },
       {
         "title": "Proxmox-Homelab",
-        "text": "Virtualisierungs-Lab für Windows- und Linux-Systemintegration | seit November 2026\n\n• Proxmox VE als Hypervisor auf einem iMac18,2 (i5-7400, 32 GB RAM, SSD), per LAN angebunden mit statischer IP\n• VMs: Windows 11, Windows Server 2025, Ubuntu und Debian\n• Zweck: Übungsumgebung für Active Directory, Gruppenrichtlinien, Intune/Entra-Szenarien und Linux-Administration (LPIC)\n• Ergänzt die Umschulungs-Labs (Hyper-V) um eine eigene, dauerhaft verfügbare Umgebung\n\nTechnologien: iMac 18,2, Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz, 32 GB RAM, Proxmox VE, Windows Server 2025, Windows 11, Debian, Ubuntu"
+        "text": "Virtualisierungs-Lab für Windows- und Linux-Systemintegration | seit November 2026\n\nProxmox VE als Hypervisor auf einem iMac 18,2 (i5-7400, 32 GB RAM, SSD), per LAN mit statischer IP angebunden.  VMs: Windows 11, Windows Server 2025, Ubuntu und Debian. Zweck: Übungsumgebung für Active Directory, Gruppenrichtlinien, Intune-/Entra-Szenarien und Linux-Administration (LPIC). Ergänzt die Umschulungs-Labs (Hyper-V) um eine eigene, dauerhaft verfügbare Umgebung.\n\nTechnologien: iMac 18,2, Intel(R) Core(TM) i5-7400 CPU @ 3,00 GHz, 32 GB RAM, Proxmox VE, Windows Server 2025, Windows 11, Debian, Ubuntu",
+        "tags": [
+          "iMac",
+          "Proxmox",
+          "Windows Server",
+          "Debian",
+          "Ubuntu"
+        ]
       },
       {
         "title": "Hybride Identität: AD + Entra ID + Intune",
