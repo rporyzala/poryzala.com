@@ -43,7 +43,9 @@
           "Securepoint",
           "VPN",
           "TI-Konnektor",
-          "UniFi"
+          "UniFi",
+          "FRITZ!Box",
+          "Gematik"
         ]
       },
       {
