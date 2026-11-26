@@ -16,19 +16,23 @@
   "profil": {
     "kicker": "Profil",
     "title": "Quereinsteiger mit Praxis",
-    "text": "Seit Februar 2026 mache ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06.2027 bis 04.02.2028**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und über zwei Jahre unterstütze Praxen bei ihrer IT: tomedo® Server, Clients, Securepoint, Openvpn.\n\nAus 25+ Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
+    "text": "Seit Februar 2026 absolviere ich bei **Damago in Berlin** eine zweijährige Umschulung zum Fachinformatiker für Systemintegration (Abschluss Februar 2028). Für den ersten Praxisblock suche ich ein Praktikum vom **07.06.2027 bis 04.02.2028**.\n\nIT ist für mich kein Neuland: Von 2018 bis 2022 habe ich in einer Berliner Rechtsanwaltskanzlei die gesamte IT betreut, von Windows- und Linux-Clients über die beA-Anbindung bis zur digitalen Akte auf Nextcloud. Daneben habe ich über 15 Websites aufgebaut und gepflegt, auch für Arztpraxen mit DSGVO-konformer Infrastruktur, und über zwei Jahre unterstütze Praxen bei ihrer IT: tomedo® Server, Clients, Securepoint, Openvpn.\n\nAus 25+ Jahren Werbung und Design bringe ich mit, was in der IT oft fehlt: **sauber dokumentieren, Anwender ernst nehmen, unter Termindruck liefern.** Ich arbeite auf Deutsch, Englisch und Polnisch."
   },
   "praxis": {
     "kicker": "Praxiserfahrung",
     "title": "IT im echten Betrieb",
     "items": [
       {
-        "when": "01/2023 – 11/2025, seitdem auf Anfrage",
+        "when": "01/2023 – 11/2025",
         "title": "IT-Betreuung für Berliner Arztpraxen",
-        "text": "Zwei Praxen an drei Standorten mit getrennten Netzen. Betrieb der Praxissoftware tomedo (Server und Clients auf macOS), Anbindung an die Telematikinfrastruktur, NAS-Speicher, VPN zwischen den Standorten und für Fernwartung.",
+        "text": "Zwei Arztpraxen mit insgesamt zehn Arbeitsplätzen. Betrieb der Praxissoftware tomedo (Server und Clients auf macOS), Anbindung an die Telematikinfrastruktur, NAS-Speicher, VPN zwischen den Standorten und für Fernwartung. Dazu gehörten Geräteauswahl und -beschaffung, Installation und Updates, Mailserver und Mailkonten, die Beratung der Mitarbeitenden sowie die Erstellung und Betreuung zweier Praxis-Websites.",
         "bullets": [
+          "Support vor Ort und remote für Ärztinnen, Ärzte und MFA",
+          "Praxisumzug an einem Wochenende ohne Ausfall des Praxisbetriebs: fünf Arbeitsplätze, DSL der Telekom über FRITZ!Box, Securepoint-Firewall, Telematikinfrastruktur mit On-Site-Konnektor, fünf Drucker, Faxgerät, zwei Kartenleser und die komplette Verkabelung",
+          "tomedo-Serverabsturz: SecureToken-Inkonsistenz diagnostiziert und über den Recovery Mode behoben",
+          "macOS- und iOS-Administration, Firewall-Wartung (Securepoint), VPN-Konfiguration, Router und WLAN (UniFi, FRITZ!Box), Managed Switches",
+          "Netzwerk und Internetanschlüsse (DSL, Kabel, LAN, WLAN), strukturierte Verkabelung, Einbindung von Druckern, Kartenterminals und Kartenlesegeräten",
           "macOS- und iOS-Administration, Fehlersuche bis Recovery Mode (z. B. SecureToken-Probleme)",
-          "Firewall-Wartung (Securepoint), VPN-Konfiguration, Router und WLAN (UniFi, Fritzbox), Managed Switches",
           "Einbindung von Druckern, Kartenterminals und Kartenlesegeräten",
           "Support vor Ort und remote für Ärztinnen, Ärzte und MFA; strukturierte Verkabelung",
           "Vollständige IT-Übergabedokumentation mit Netzwerktopologie für einen externen Dienstleister"
