@@ -27,15 +27,12 @@
         "title": "IT-Betreuung für Berliner Arztpraxen",
         "text": "Zwei Arztpraxen mit insgesamt zehn Arbeitsplätzen. Betrieb der Praxissoftware tomedo (Server und Clients auf macOS), Anbindung an die Telematikinfrastruktur, NAS-Speicher, VPN zwischen den Standorten und für Fernwartung. Dazu gehörten Geräteauswahl und -beschaffung, Installation und Updates, Mailserver und Mailkonten, die Beratung der Mitarbeitenden sowie die Erstellung und Betreuung zweier Praxis-Websites.",
         "bullets": [
-          "Support vor Ort und remote für Ärztinnen, Ärzte und MFA",
+          "Support vor Ort und remote für Ärztinnen, Ärzte und MFA; strukturierte Verkabelung",
           "Praxisumzug an einem Wochenende ohne Ausfall des Praxisbetriebs: fünf Arbeitsplätze, DSL der Telekom über FRITZ!Box, Securepoint-Firewall, Telematikinfrastruktur mit On-Site-Konnektor, fünf Drucker, Faxgerät, zwei Kartenleser und die komplette Verkabelung",
           "tomedo-Serverabsturz: SecureToken-Inkonsistenz diagnostiziert und über den Recovery Mode behoben",
           "macOS- und iOS-Administration, Firewall-Wartung (Securepoint), VPN-Konfiguration, Router und WLAN (UniFi, FRITZ!Box), Managed Switches",
           "Netzwerk und Internetanschlüsse (DSL, Kabel, LAN, WLAN), strukturierte Verkabelung, Einbindung von Druckern, Kartenterminals und Kartenlesegeräten",
-          "macOS- und iOS-Administration, Fehlersuche bis Recovery Mode (z. B. SecureToken-Probleme)",
-          "Einbindung von Druckern, Kartenterminals und Kartenlesegeräten",
-          "Support vor Ort und remote für Ärztinnen, Ärzte und MFA; strukturierte Verkabelung",
-          "Vollständige IT-Übergabedokumentation mit Netzwerktopologie für einen externen Dienstleister"
+          "Einbindung von Druckern, Kartenterminals und Kartenlesegeräten"
         ],
         "tags": [
           "macOS",
