@@ -94,12 +94,14 @@ ${sections.map(([id, label]) => `        <li><a href="#${id}">${label}</a></li>`
       <a class="btn primary" href="#kontakt">${esc(h.button_primary)}</a>
       ${safeUrl(h.github_url) ? `<a class="btn" href="${safeUrl(h.github_url)}" rel="noopener">${esc(h.button_secondary)}</a>` : ""}
     </div>
-${h.show_terminal ? `    <pre class="term"><span class="p">robert@<span class="h">pi5</span>:~$</span> docker compose ps --format '{{.Name}}\\t{{.Status}}'
-nextcloud-app     Up 12 days
-nextcloud-nginx   Up 12 days
-nextcloud-db      Up 12 days
-adguard           Up 12 days
-<span class="p">robert@<span class="h">pi5</span>:~$</span> <span class="c"># selbst gehostet, selbst gewartet, selbst abgesichert</span></pre>` : ""}
+${h.show_terminal ? `    <pre class="term" id="pi-term"><span class="p">robert@<span class="h">pi5</span>:~$</span> ./status.sh
+nextcloud-app     running
+nextcloud-nginx   running
+nextcloud-db      running
+adguard           running
+cloudflared       running
+<span class="p">robert@<span class="h">pi5</span>:~$</span> <span class="c"># selbst gehostet, selbst gewartet, selbst abgesichert</span></pre>
+    <script defer src="/js/pi-status.js"></script>` : ""}
   </div>
 
   <section id="profil">

@@ -136,3 +136,6 @@ nav a[aria-current="page"]{color:var(--ink);font-weight:600}
 .dgallery img{width:100%;height:auto;border-radius:10px;display:block;border:1px solid var(--line)}
 .hero h1{font-weight:200;letter-spacing:-.03em}
 .hero h1 small{font-weight:300}
+
+/* Live-Status vom Pi */
+.term .ok{color:#3fb950}.term .bad{color:#f85149}
